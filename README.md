@@ -2,6 +2,11 @@
 Group repository for DS5110 Big Data Systems project.
 
 ## Manifest:
+
+- **FeatureSelection_Modeling.ipynb**:
+
+Feature Selection and basic modeling notebook.
+  
 - **MVP.ipynb**:
   
 Exploratory notebook where the data is cleaned; includes some basic EDA.
