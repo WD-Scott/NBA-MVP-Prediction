@@ -1,9 +1,9 @@
-# DS5110_Project
+# **DS5110_Project**
 Group repository for DS5110 Big Data Systems project.
 
-## Manifest:
+## **Manifest**:
 
-### Jupyter Notebooks:
+### **Jupyter Notebooks**:
 
 `FeatureSelection_Modeling.ipynb`:
 
@@ -13,7 +13,7 @@ Feature Selection and basic modeling notebook.
   
 Exploratory notebook where the data is cleaned; includes some basic EDA.
 
-### Data Files:
+### **Data Files**:
 
 `df_clean.csv`:
   
@@ -23,7 +23,7 @@ Main .csv file used for training and validation.
   
 Testing .csv file for examining model performance on last 5 seasons (2018-22).
 
-### Python Module Files (helper functions, classes)
+### **Python Module Files (helper functions, classes)**
 
 `pltcorrheatmap.py`:
   
