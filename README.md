@@ -15,6 +15,10 @@ Feature Selection notebook where we use the `preprocess_and_train` function from
   
 Exploratory notebook where the data is cleaned; includes some basic EDA.
 
+`Models.ipynb`:
+
+Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
+
 ### **Data Files**:
 
 `df_clean.csv`:
