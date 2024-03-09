@@ -33,7 +33,7 @@ Custom function for generating correlation heat maps as we determine feature imp
 
 `preptrain.py`:
   
-Custom function/pipeline for preprocessing, described below:
+Custom function/pipeline for preprocessing and feature selection, described below:
 
 - Defining Numeric Columns (Excluding "Pos"):
 
