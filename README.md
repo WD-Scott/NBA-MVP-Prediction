@@ -25,6 +25,10 @@ Main .csv file used for training and validation.
   
 Testing .csv file for examining model performance on last 5 seasons (2018-22).
 
+`df_selected.csv`:
+
+Selected features .csv containing the subset of predictor variables.
+
 ### **Python Module Files (helper functions, classes)**
 
 `pltcorrheatmap.py`:
