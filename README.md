@@ -7,33 +7,10 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ### **Jupyter Notebooks**:
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JupyterLab Logo Example</title>
-    <style>
-        .container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            margin-right: 10px; /* Adjust the margin as needed */
-        }
-    </style>
-</head>
 <body>
-    <div class="container">
-        <img src="jupyter-sq-text.png" alt="JupyterLab Logo" class="logo">
-        <p>This is a line of text with the JupyterLab logo:</p>
-    </div>
+  <img src="jupyter-sq-text.png" class="myImage"/>
+  <h3 class="heading">Jupyter Notebooks</h3>
 </body>
-</html>
-
-### <p>**Jupyter Notebooks**:</p>
-<img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
-
 
 #### FeatureSelection.ipynb:
 
