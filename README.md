@@ -7,7 +7,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ### **Jupyter Notebooks**:
 
-<p>This is a line of text with the JupyterLab logo:</p>
+### <p>**Jupyter Notebooks**:</p>
 <img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
 
 #### FeatureSelection.ipynb:
