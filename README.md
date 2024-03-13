@@ -35,6 +35,9 @@ Data Scientists and analysts have developed several metrics for determining a pl
 - ### df_selected.csv:
 
   Selected features .csv containing the subset of predictor variables.
+
+- ### mvp_data.csv:
+  Initial NBA mvp data set. Reduced in `MVP.ipynb` to only include essential rows and columns of study.
 </details>
 <br>
 <details>
