@@ -5,25 +5,10 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ## **Manifest**:
 
+<img src="jupyter-sq-text.png" align="left" width="50" height="50" />
 ### **Jupyter Notebooks**:
 
-<div class="container">
-    <img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
-    <strong class="centered-text">Jupyter Notebooks:</strong>
-</div>
 
-<style>
-.container {
-    display: flex;
-    align-items: center;
-}
-
-.centered-text {
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
-}
-</style>
 
 #### FeatureSelection.ipynb:
 
