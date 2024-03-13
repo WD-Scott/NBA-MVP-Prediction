@@ -8,7 +8,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 <img src="ipynb.png" align="left" width="50" height="60" />
 
 ### **Jupyter Notebooks**:
-\n
+<br>
 - #### FeatureSelection.ipynb:
 
   Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
