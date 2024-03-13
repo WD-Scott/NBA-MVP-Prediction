@@ -7,6 +7,11 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ### **Jupyter Notebooks**:
 
+<div class="container">
+    <img src="jupyter-sq-text.png" alt="JupyterLab Logo" class="logo">
+    <p>**Jupyter Notebooks**:</p>
+</div>
+
 ### <p>**Jupyter Notebooks**:</p>
 <img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
 
