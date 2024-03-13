@@ -7,6 +7,10 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ### **Jupyter Notebooks**:
 
+### <p>**Jupyter Notebooks**:</p>
+<img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
+
+
 #### FeatureSelection.ipynb:
 
 Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
