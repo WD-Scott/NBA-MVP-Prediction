@@ -6,7 +6,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 ## **Manifest**:
 
 <details>
-<summary><img src="ipynb.png" align="left" width="40" height="40" /> Jupyter Notebooks</summary>
+<summary><img src="images/ipynb.png" align="left" width="40" height="40" /> Jupyter Notebooks</summary>
   
 - ### FeatureSelection.ipynb:
 
@@ -22,7 +22,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 </details>
 <br>
 <details>
-<summary><img src="csv.png" align="left" width="40" height="40" /> Data Files</summary>
+<summary><img src="images/csv.png" align="left" width="40" height="40" /> Data Files</summary>
   
 - ### df_clean.csv:
   
@@ -41,7 +41,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 </details>
 <br>
 <details>
-<summary><img src="py.png" align="left" width="40" height="40" /> Python Module Files (helper functions, classes)</summary>
+<summary><img src="images/py.png" align="left" width="40" height="40" /> Python Module Files (helper functions, classes)</summary>
   
 - ### pltcorrheatmap.py:
   
