@@ -5,10 +5,11 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ## **Manifest**:
 
-<img src="ipynb.png" align="left" width="50" height="60" />
+<img src="ipynb.png" align="left" width="50" height="55" />
 
 ### **Jupyter Notebooks**:
 <br>
+
 - #### FeatureSelection.ipynb:
 
   Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
