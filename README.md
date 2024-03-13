@@ -6,6 +6,8 @@ Data Scientists and analysts have developed several metrics for determining a pl
 ## **Manifest**:
 
 <details>
+<summary>Jupyter Notebooks</summary>
+  
 <img src="ipynb.png" align="left" width="40" height="40" />
 
 ### **Jupyter Notebooks**:
