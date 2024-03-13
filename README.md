@@ -19,7 +19,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 }
 
 .centered-text {
-    margin-left: 10px; /* Adjust margin as needed */
+    margin-left: 10px;
     display: inline-block;
     vertical-align: middle;
 }
