@@ -21,8 +21,9 @@ Data Scientists and analysts have developed several metrics for determining a pl
 - #### Models.ipynb:
 
   Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
+<br>
 
-<img src="ipynb.png" align="left" width="50" height="55" />
+<img src="csv.png" align="left" width="50" height="55" />
 
 ### **Data Files**:
 <br>
@@ -38,6 +39,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 - #### df_selected.csv:
 
   Selected features .csv containing the subset of predictor variables.
+<br>
 
 ### **Python Module Files (helper functions, classes)**
 
