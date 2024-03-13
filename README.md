@@ -5,7 +5,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ## **Manifest**:
 
-<img src="ipynb.png" align="left" width="50" height="50" />
+<img src="ipynb.png" align="right" width="50" height="60" />
 
 ### **Jupyter Notebooks**:
 
