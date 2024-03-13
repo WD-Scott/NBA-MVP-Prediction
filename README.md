@@ -7,10 +7,12 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ### **Jupyter Notebooks**:
 
-<p class="container">
+<div class="container">
     <img src="jupyter-sq-text.png" alt="JupyterLab Logo" width="50" height="50">
     <strong class="centered-text">Jupyter Notebooks:</strong>
-</p>
+</div>
+
+<style>
 .container {
     display: flex;
     align-items: center;
@@ -21,6 +23,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
     display: inline-block;
     vertical-align: middle;
 }
+</style>
 
 #### FeatureSelection.ipynb:
 
