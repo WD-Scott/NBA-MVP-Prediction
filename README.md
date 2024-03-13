@@ -26,7 +26,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 <img src="csv.png" align="left" width="50" height="55" />
 
 ### **Data Files**:
-<br>
+  
 
 - #### df_clean.csv:
   
@@ -41,7 +41,10 @@ Data Scientists and analysts have developed several metrics for determining a pl
   Selected features .csv containing the subset of predictor variables.
 <br>
 
+<img src="py.png" align="left" width="50" height="55" />
+
 ### **Python Module Files (helper functions, classes)**
+  
 
 #### pltcorrheatmap.py:
   
