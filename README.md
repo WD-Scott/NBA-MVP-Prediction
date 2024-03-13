@@ -8,19 +8,18 @@ Data Scientists and analysts have developed several metrics for determining a pl
 <img src="ipynb.png" align="left" width="50" height="60" />
 
 ### **Jupyter Notebooks**:
+\n
+- #### FeatureSelection.ipynb:
 
-
-  - #### FeatureSelection.ipynb:
-
-    Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
+  Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
   
-  - #### DataCleaning_EDA.ipynb:
+- #### DataCleaning_EDA.ipynb:
   
-    Exploratory notebook where the data is cleaned; includes some basic EDA.
+  Exploratory notebook where the data is cleaned; includes some basic EDA.
 
-  - #### Models.ipynb:
+- #### Models.ipynb:
 
-    Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
+  Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
 
 ### **Data Files**:
 
