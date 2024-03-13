@@ -22,19 +22,22 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
   Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
 
+<img src="ipynb.png" align="left" width="50" height="55" />
+
 ### **Data Files**:
+<br>
 
-#### df_clean.csv:
+- #### df_clean.csv:
   
-Main .csv file used for training and validation.
+  Main .csv file used for training and validation.
 
-#### df_last.csv:
+- #### df_last.csv:
   
-Testing .csv file for examining model performance on last 5 seasons (2018-22).
+  Testing .csv file for examining model performance on last 5 seasons (2018-22).
 
-#### df_selected.csv:
+- #### df_selected.csv:
 
-Selected features .csv containing the subset of predictor variables.
+  Selected features .csv containing the subset of predictor variables.
 
 ### **Python Module Files (helper functions, classes)**
 
