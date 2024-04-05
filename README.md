@@ -62,7 +62,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
   - Defining Numeric Columns (Excluding "Pos"):
 
-    This step identifies the numeric columns in the input DataFrame `df`, excluding the column labeled "Pos" for player position.
+    This step identifies the numeric columns in the input DataFrame `df`, excluding the "Pos" column for player position.
 
   - Splitting Data into Training and Testing Sets:
 
@@ -70,7 +70,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
   - Defining Preprocessing Steps:
 
-    Defines the preprocessing steps using pipelines. For numeric features, we impute missing values with the median value and then scale the features using standardization (subtracting the mean and dividing by the standard deviation). For categorical features (specifically "Pos"), we apply one-hot encoding while ignoring unknown categories.
+    We impute missing values with the median value for numeric features and then scale the features using standardization (subtracting the mean and dividing by the standard deviation). We apply one-hot encoding while ignoring unknown categories for categorical features (specifically "Pos").
 
   - Preprocessing Training and Testing Data:
 
@@ -78,7 +78,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
   - Extracting Feature Names:
 
-    Extracts the feature names from the `ColumnTransformer` object. This step removes any prefixes such as "num__" or "cat__".
+    This step extracts the feature names from the `ColumnTransformer` object, removing any prefixes such as "num__" or "cat__."
 
   - Filter Method - SelectKBest:
 
@@ -90,7 +90,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
   - Embedded Method - L1-based feature selection using Lasso:
 
-    LassoCV (Lasso Cross-validation) is employed to perform L1-based feature selection. It iteratively fits Lasso models with different regularization strengths (alphas) and selects features based on non-zero coefficients.
+    Uses LassoCV (Lasso Cross-validation) to perform L1-based feature selection, iteratively fitting Lasso models with different regularization strengths (alphas) and selecting features based on non-zero coefficients.
 
   - Performs Principal Component Analysis (PCA):
 
