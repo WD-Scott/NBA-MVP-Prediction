@@ -54,7 +54,11 @@ Data Scientists and analysts have developed several metrics for determining a pl
   
 - ### pltcorrheatmap.py:
   
-  Custom function for generating correlation heat maps as we determine feature importance.
+  Custom function to generate correlation heat maps to help determine multicollnearity as we examine feature importance.
+
+- ### print_imps.py:
+
+  Custom function to print model feature importance scores for the selected features.
 
 - ### preptrain.py:
   
