@@ -10,7 +10,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 ## **Methods**:
 
 
-![](images/feature_table.png)
+![](images/features_table.png)
 
 
 ## **Manifest**:
