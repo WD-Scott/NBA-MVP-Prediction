@@ -10,7 +10,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 ## **Methods**:
 
 
-<img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/feature_table.png" width="390">
+<img src="images/feature_table.png" alt="Sample Image" style="width:353px; height:195px;">
 
 
 ## **Manifest**:
