@@ -27,7 +27,7 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 * **CPU Vendor**: AuthenticAMD
 * **CPU Model**: AMD EPYC 7742 64-Core Processor
 
-### Feature Selection Process:
+### **Feature Selection Process**:
 
 We perform robust feature selection to reduce model and index complexity. The main code we use for feature selection can be found in `preptrain.py`. This Python module file includes a function, `preprocess_and_train`, which we employ in `FeatureSelection.ipynb`. We wrote the function to perform the following:
 
@@ -90,7 +90,23 @@ The combined split-bar plot above highlights the best-performing model (the Extr
 
 TO BE CONTINUED AFTER TESTING ...
 
-## **Manifest**:
+## **Beyond the original specifications**
+
+TBD...
+
+## **Results**
+
+TBD...
+
+## **Testing**
+
+TBD ...
+
+## **Conclusions**
+
+TBD ...
+
+## **Repo Manifest**:
 
 <details>
 <summary><img src="images/ipynb.png" align="left" width="40" height="40" /> Jupyter Notebooks</summary>
@@ -145,65 +161,6 @@ TO BE CONTINUED AFTER TESTING ...
 
 - ### preptrain.py:
   
-  Custom function/pipeline for preprocessing and feature selection, described below:
-
-  - Defining Numeric Columns (Excluding "Pos"):
-
-    This step identifies the numeric columns in the input DataFrame `df`, excluding the "Pos" column for player position.
-
-  - Splitting Data into Training and Testing Sets:
-
-    Splits the input data into training and testing sets using the `train_test_split` function from `scikit-learn`.
-
-  - Defining Preprocessing Steps:
-
-    We impute missing values with the median value for numeric features and then scale the features using standardization (subtracting the mean and dividing by the standard deviation). We apply one-hot encoding while ignoring unknown categories for categorical features (specifically "Pos").
-
-  - Preprocessing Training and Testing Data:
-
-    Applies the preprocessing separately to the training and testing datasets using the `fit_transform` and `transform` methods of the `ColumnTransformer`.
-
-  - Extracting Feature Names:
-
-    This step extracts the feature names from the `ColumnTransformer` object, removing any prefixes such as "num__" or "cat__."
-
-  - Filter Method - SelectKBest:
-
-    Uses SelectKBest with ANOVA F-value to select the top 10 features based on their scores. These scores represent the strength of the relationship between each feature and the target variable.
-
-  - Wrapper Method 1 - Random Forest Feature Importance:
-
-    Trains a Random Forest Regressor on the preprocessed training data to determine feature importance and selects the top 10 features with the highest feature importance scores.
-
-  - Embedded Method - L1-based feature selection using Lasso:
-
-    Uses LassoCV (Lasso Cross-validation) to perform L1-based feature selection, iteratively fitting Lasso models with different regularization strengths (alphas) and selecting features based on non-zero coefficients.
-
-  - Performs Principal Component Analysis (PCA):
-
-    Performs PCA to reduce the dimensionality of the data and select the top 10 principal components as features.
-
-  - Stability Selection with Lasso:
-
-    Uses Stability Selection with Lasso to select features. We apply LassoCV within SelectFromModel to select features based on stability across multiple Lasso models.
-
-  - Recursive Feature Elimination with Cross-Validation (RFECV):
-
-    Applies RFECV, a wrapper method that recursively selects features by recursively training the model and selecting the best-performing subset of features through cross-validation.
-
-  - Wrapper Method 2 - Gradient Boosting Machine Feature Importance
-
-    Trains a Gradient Boosting Machine model on the preprocessed training data to determine feature importance and selects the top 10 features with the highest feature importance scores.
-
-  - Embedded Method 2 - Support Vector Regressor
-
-    Uses Support Vector Regressor (SVR) within SelectFromModel to perform embedded feature selection. Features are selected based on the coefficients obtained from the SVR model.
-
-  - Preparing Final Data for Training:
-
-    Extracts the selected features from the preprocessed training and testing data and prepares the final datasets (X_train, X_test, y_train, y_test) for model training and evaluation.
-
-  - Returning Results:
-
-    The function returns various components: the selected features from each method (features_filter, features_wrapper, features_embedded), the names of the selected features (feature_names), and the preprocessed training and testing data along with their corresponding labels.
+  Custom function/pipeline for preprocessing and feature selection.
+  
 </details>
