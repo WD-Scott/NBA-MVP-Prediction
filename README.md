@@ -76,15 +76,11 @@ In the `Models.ipynb` notebook, we train and test only the ensemble and tree-bas
 * AdaBoost (Ada)
 * Extreme Gradient Boosting (XGB)
 
-The image below displays the feature importance score from each model.
+The image below displays the average feature importance score for each feature (averaged across the six models listed above) and each model's $R^2$ and MSE value.
 
-![](images/features_table.png)
+![](images/features_performance.png)
 
-The table shows that, on average, Win Shares (WS) and then Value Over Replacement Play (VORP) are the most important features. However, we see a wide variety of importance scores for each feature across the various models.
-
-![](images/model_comp.png)
-
-The combined split-bar plot above highlights the best-performing model (the Extra-trees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from Models.ipynb and import it into Test.ipynb, where we test it against the 2018–22 seasons.
+The table shows that, on average, Win Shares (WS) and then Value Over Replacement Play (VORP) are the most important features. The combined split-bar plot above highlights the best-performing model (the Extra-trees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from Models.ipynb and import it into Test.ipynb, where we test it against the 2018–22 seasons.
 
 TO BE CONTINUED AFTER TESTING ...
 
