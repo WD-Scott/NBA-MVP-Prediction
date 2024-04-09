@@ -9,7 +9,25 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ## **Data**:
 
-...
+We obtained the dataset from Kaggle, but the data was originally scraped from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
+
+The dataset is stored in a comma-separated Excel sheet, `mvp_data.csv`, which we load into `DataCleaning_EDA.ipynb` and perform some cleaning and aggregation steps, including:
+
+* Fill missing values for the Rank, mvp_share, and Trp Dbl (Triple Double) columns
+* Normalize the Trp Dbl column by dividing it by G (the total number of games played in a given season)
+* Convert G (Games) and Season columns to integer data type
+* Filter the entire data frame (`df`) to include only players that meet the 40-game requirement necessary to be considered for the MVP award
+* Create the Rk_Conf (Conference Ranking) column – calculate conference rankings for each season based on W (the number of wins), then re-rank the conference rankings within each season and conference group.
+* Save the edited data frame thus far to `mvp_data_edit.csv` (we use this in `Test.ipynb` to merge predicted values with actual and compare results)
+* Drop the Conference and W (Wins) columns
+* Create a separate data frame (`df_last`) with the data for the most recent five seasons (2018–22), which we use to test our final model and index in `Test.ipynb`
+* Create last_names and last_seasons
+* Check for missing values: We found many missing values for seasons before 1980; for example, 3P (Three-pointers) were not introduced in the NBA until 1979–80, and there are a lot of missing values before then, so we drop any season before 1980.
+* Save `df` and `df_last` to comma-separated Excel files
+
+We discuss some additional preprocessing steps in the Experimental Design section below, as these steps relate to the project's feature selection and modeling phases.
+
+The values we seek to predict are in the `mvp_share` column, which represents the result of the MVP voting for each season.
 
 ## **Experimental Design**:
 
@@ -29,18 +47,20 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 
 ### **Feature Selection Process**:
 
+In `FeatureSelection.ipynb`, we load in the main data frame (`df`) that we created and saved in `DataCleaning_EDA.ipynb`.
+
 We perform robust feature selection to reduce model and index complexity. The main code we use for feature selection can be found in `preptrain.py`. This Python module file includes a function, `preprocess_and_train`, which we employ in `FeatureSelection.ipynb`. We wrote the function to perform the following:
 
-* Impute missing values with the median value for numeric features, scale the features using standardization (subtracting the mean and dividing by the standard deviation), and apply one-hot encoding while ignoring unknown categories for categorical features.
+* Impute missing values with the median value for numeric features, scale the features using standardization (subtracting the mean and dividing by the standard deviation) and apply one-hot encoding for categorical features.
 
-* Apply the preprocessing separately to the training and testing datasets and extracts the feature names from the ColumnTransformer object, removing any prefixes.
+* Apply the preprocessing separately to the training and testing datasets and extract the feature names, removing any prefixes.
 
-* Train and test eight different modeling techniques on the preprocessed data and extract the feature importance scores of the top ten predictors for:
+* Train and test eight different models on the preprocessed data and extract the feature importance scores of the top ten predictors. The models are:
 
   - Random Forest (RF)
   - Decision Tree (DTree)
   - Principal Component Analysis (PCA)
-  - Gradient Boosting (GBM)
+  - Gradient Boosting (GB)
   - Support Vector (SVR)
   - Extra Trees (XTrees)
   - AdaBoost (Ada)
@@ -48,11 +68,13 @@ We perform robust feature selection to reduce model and index complexity. The ma
 
 For hyperparameter tuning, we define a reasonably extensive parameter grid for each method and use Bayesian optimization with five-fold cross-validation to sample parameter settings from the specified distributions.
 
-In this the `FeatureSelection.ipynb` notebook, we run the `preprocess_and_train` and use the `print_dict_imps` function from `print_imps.py` to print out tables of the feature importances for each method, which are stored in a Python dictionary via the `preprocess_and_train` function.
+In `FeatureSelection.ipynb`, we run the `preprocess_and_train function` from `preptrain.py` and use the `print_dict_imps` function from `print_imps.py` to print tables of the feature importances for each method, which we store in a Python dictionary via the `preprocess_and_train function`. We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. 
 
 We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
 
-We chose to drop all of these except PTS because PTS effectively captures the others. The resulting top 10 features are:
+The results for the top 10 features include several highly correlated features related to scoring, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts), and PTS (points).
+
+We chose to drop all of these except PTS because the latter effectively captures the others. The resulting top ten features are:
 
 - OWS = Offensive Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a> for more information on how this is calculated)
 - MP = Minutes Played
@@ -65,22 +87,31 @@ We chose to drop all of these except PTS because PTS effectively captures the ot
 - TS% = True Shooting Percentage
 - Rk_Year = Team league ranking
 
-There are still some highly correlated features, but we proceed with these 10 and use them for modeling in `Models.ipynb`.
+There are still some highly correlated features, but we proceed with these 10 and save them into a comma-separated Excel file (`df_separated.csv`) to use for modeling.
 
-In the `Models.ipynb` notebook, we train and test only the ensemble and tree-based methods, as these are best suited for the next task: finding the best model we can and using the feature importance scores to inform our index design. So, we train, test, and compare six models, including:
+### **Modeling**:
 
-* Random Forest (RF)
-* Decision Tree (DTree)
-* Gradient Boosting (GBM)
-* Extra Trees (XTrees)
-* AdaBoost (Ada)
-* Extreme Gradient Boosting (XGB)
+In `Models.ipynb`, we use `df_selected.csv` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
-The image below displays the average feature importance score for each feature (averaged across the six models listed above) and each model's $R^2$ and MSE value.
+The image below displays the average feature importance score for each feature. 
 
-![](images/features_performance.png)
+INSERT IMAGE
 
-The table shows that, on average, Win Shares (WS) and then Value Over Replacement Play (VORP) are the most important features. The combined split-bar plot above highlights the best-performing model (the Extra-trees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from Models.ipynb and import it into Test.ipynb, where we test it against the 2018–22 seasons.
+As the table shows, on average, Win Shares (WS) and Value Over Replacement Play (VORP) are the most important features. 
+
+The table below highlights the best-performing model (the ExtraTrees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from `Models.ipynb` and import it into `Test.ipynb`, where we test it against the 2018–22 seasons.
+
+INSERT IMAGE
+
+### **Testing**:
+
+In `Test.ipynb`, we load in the selected features (`df_selected.csv`) as `df_selected`, the training dataset (`df_clean.csv`) as `df`, the testing dataset containing the data for the 2018–22 seasons (`df_last.csv`) as `df_last`, and the best model (`best_Xtrees.pkl`) as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
+
+We then perform an 80-20 train/test split of `df` and train and test `XTrees`. Next, we use `XTrees` to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
+
+The image below displays the top four (by actual MVP share) players for the 2018–22 seasons and compares the predictions to the actual values. 
+
+INSERT IMAGE
 
 TO BE CONTINUED AFTER TESTING ...
 
