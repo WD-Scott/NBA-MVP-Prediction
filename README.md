@@ -52,26 +52,19 @@ In this the `FeatureSelection.ipynb` notebook, we run the `preprocess_and_train`
 
 We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points):
 
-INSERT CORR PLOT
+![](images/corr_matrix1.png)
+
+We chose to drop all of these except PTS, because PTS effectively captures the others. The resulting top 10 features are:
 
 - OWS = Offensive Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a> for more information on how this is calculated)
-
 - MP = Minutes Played
-
 - PTS = Points
-
 - WS = Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a> for information about how this feature is calculated)
-
-- VORP = Value Over Replacement Player -- $[BPM - (-2.0)]*$(% of possessions played)$ * \frac{team games}{82}$
-
+- VORP = Value Over Replacement Player
 - PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a> for the formula)
-
 - TOV = Turnovers
-
 - AST = Assists
-
 - TS% = True Shooting Percentage
-
 - Rk_Year = Team league ranking
 
 There are still some highly correlated features, but we proceed with these 10 and use them for modeling in `Models.ipynb`.
@@ -87,11 +80,11 @@ In this the  `Models.ipynb` notebook, we choose to train and test only the ensem
 
 The image below displays the feature importance score from each model.
 
-INSERT IMAGE TABLE
+![](images/features_table.png)
 
 From the table, we see that, on average, Win Shares (WS) and then Value Over Replacement Play (VORP) are the most important features. However, we see wide variety in the importance scores for each feature across the various models.
 
-INSERT SPLIT BAR CHART
+![](images/model_comp.png)
 
 The combined, split bar plot above highlights the best performing model (the Extra-trees regressor), which barely outperforms Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from `Models.ipynb` and import it into `Test.ipynb`, where we test it against the 2018–22 seasons.
 
