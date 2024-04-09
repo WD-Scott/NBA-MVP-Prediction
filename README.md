@@ -95,13 +95,13 @@ In `Models.ipynb`, we use `df_selected.csv` to train and test only the ensemble 
 
 The image below displays the average feature importance score for each feature. 
 
-INSERT IMAGE
+![](images/avg_importance.png)
 
 As the table shows, on average, Win Shares (WS) and Value Over Replacement Play (VORP) are the most important features. 
 
 The table below highlights the best-performing model (the ExtraTrees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from `Models.ipynb` and import it into `Test.ipynb`, where we test it against the 2018–22 seasons.
 
-INSERT IMAGE
+![](images/model_performance.png)
 
 ### **Testing**:
 
@@ -111,7 +111,7 @@ We then perform an 80-20 train/test split of `df` and train and test `XTrees`. N
 
 The image below displays the top four (by actual MVP share) players for the 2018–22 seasons and compares the predictions to the actual values. 
 
-INSERT IMAGE
+![](images/pred_actual.png)
 
 TO BE CONTINUED AFTER TESTING ...
 
