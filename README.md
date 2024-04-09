@@ -50,9 +50,7 @@ For hyperparameter tuning, we define a reasonably extensive parameter grid for e
 
 In this the `FeatureSelection.ipynb` notebook, we run the `preprocess_and_train` and use the `print_dict_imps` function from `print_imps.py` to print out tables of the feature importances for each method, which are stored in a Python dictionary via the `preprocess_and_train` function.
 
-We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points):
-
-![](images/corr_matrix1.png)
+We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
 
 We chose to drop all of these except PTS because PTS effectively captures the others. The resulting top 10 features are:
 
