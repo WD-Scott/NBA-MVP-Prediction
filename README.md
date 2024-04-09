@@ -11,10 +11,91 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 ...
 
-## **Methods**:
+## **Experimental Design**:
 
-...
+**Note on compute resources**:
 
+We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
+
+* **System**: Linux
+* **Node Name**: udc-an34-1
+* **Release**: 4.18.0-425.10.1.el8_7.x86_64
+* **Version**: #1 SMP Thu Jan 12 16:32:13 UTC 2023
+* **Machine**: x86_64
+* **CPU Cores**: 28
+* **RAM**: 36GB
+* **CPU Vendor**: AuthenticAMD
+* **CPU Model**: AMD EPYC 7742 64-Core Processor
+
+### Feature Selection Process:
+
+We perform robust feature selection to reduce model and index complexity. The main code we use for feature selection can be found in `preptrain.py`. This Python module file includes a function, `preprocess_and_train`, which we employ in `FeatureSelection.ipynb`. We wrote the function to perform the following:
+
+* Impute missing values with the median value for numeric features, scale the features using standardization (subtracting the mean and dividing by the standard deviation), and apply one-hot encoding while ignoring unknown categories for categorical features.
+
+* Apply the preprocessing separately to the training and testing datasets and extracts the feature names from the ColumnTransformer object, removing any prefixes.
+
+* Train and test eight different modeling techniques on the preprocessed data and extract the feature importance scores of the top ten predictors for:
+
+  - Random Forest (RF)
+  - Decision Tree (DTree)
+  - Principal Component Analysis (PCA)
+  - Gradient Boosting (GBM)
+  - Support Vector (SVR)
+  - Extra Trees (XTrees)
+  - AdaBoost (Ada)
+  - Extreme Gradient Boosting (XGB)
+
+For hyperparameter tuning, we define a reasonably extensive parameter grid for each method and use Bayesian optimization with five-fold cross-validation to sample parameter settings from the specified distributions.
+
+In this the `FeatureSelection.ipynb` notebook, we run the `preprocess_and_train` and use the `print_dict_imps` function from `print_imps.py` to print out tables of the feature importances for each method, which are stored in a Python dictionary via the `preprocess_and_train` function.
+
+We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points):
+
+INSERT CORR PLOT
+
+- OWS = Offensive Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a> for more information on how this is calculated)
+
+- MP = Minutes Played
+
+- PTS = Points
+
+- WS = Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a> for information about how this feature is calculated)
+
+- VORP = Value Over Replacement Player -- $[BPM - (-2.0)]*$(% of possessions played)$ * \frac{team games}{82}$
+
+- PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a> for the formula)
+
+- TOV = Turnovers
+
+- AST = Assists
+
+- TS% = True Shooting Percentage
+
+- Rk_Year = Team league ranking
+
+There are still some highly correlated features, but we proceed with these 10 and use them for modeling in `Models.ipynb`.
+
+In this the  `Models.ipynb` notebook, we choose to train and test only the ensemble and tree-based methods, as these are best-suited for the next task, which is finding as best a model as we can and using the feature importance scores to inform our index design. So, we train, test, and compare six models, including:
+
+* Random Forest (RF)
+* Decision Tree (DTree)
+* Gradient Boosting (GBM)
+* Extra Trees (XTrees)
+* AdaBoost (Ada)
+* Extreme Gradient Boosting (XGB)
+
+The image below displays the feature importance score from each model.
+
+INSERT IMAGE TABLE
+
+From the table, we see that, on average, Win Shares (WS) and then Value Over Replacement Play (VORP) are the most important features. However, we see wide variety in the importance scores for each feature across the various models.
+
+INSERT SPLIT BAR CHART
+
+The combined, split bar plot above highlights the best performing model (the Extra-trees regressor), which barely outperforms Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from `Models.ipynb` and import it into `Test.ipynb`, where we test it against the 2018–22 seasons.
+
+TO BE CONTINUED AFTER TESTING ...
 
 ## **Manifest**:
 
