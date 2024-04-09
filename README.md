@@ -105,7 +105,7 @@ INSERT IMAGE
 
 ### **Testing**:
 
-In `Test.ipynb`, we load in the selected features (`df_selected.csv`) as `df_selected`, the training dataset (`df_clean.csv`) as `df`, the testing dataset containing the data for the 2018–22 seasons (`df_last.csv`) as `df_last`, and the best model (`best_Xtrees.pkl`) as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
+In `Test.ipynb`, we load in the selected features as `df_selected`, the training dataset as `df`, the testing dataset containing the data for the 2018–22 seasons as `df_last`, and the best model as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
 
 We then perform an 80-20 train/test split of `df` and train and test `XTrees`. Next, we use `XTrees` to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
 
