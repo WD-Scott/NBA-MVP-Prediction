@@ -7,7 +7,9 @@
 </h1>
 <p align="center">
 
+# **Team 7**: Sarah Elmasry, Ran Gao, Wyatt Scott, and Rish Sharma
 
+---
 
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
