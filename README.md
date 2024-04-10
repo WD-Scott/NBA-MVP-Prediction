@@ -2,12 +2,20 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# **Introduction**
-
-## **Project Goal**:
 Data Scientists and analysts have developed several metrics for determining a player's value to their team's success. Prominent examples include Value Over Replacement Player (VORP), Box Plus/Minus (BPM), and FiveThirtyEight's Robust Algorithm (using) Player Tracking (and) On/Off Ratings (RAPTOR)​. We aim to develop a multivariate index that weighs these parameters based on how well they predict MVP rankings, then test it on unseen data for the most recent five seasons to see if our "MVP index" correctly predicts the MVP rankings.​ We will experiment with the index formula and compare it to other methods developed by reputable analyst sources.
 
-## **Data**:
+<details>
+<summary><h1 style="font-size: 22px;">Report</h1></summary>
+
+<details>
+<summary><h2 style="font-size: 18px;">Introduction</h2></summary>
+
+TBD ...
+
+</details>
+
+<details>
+<summary><h2 style="font-size: 18px;">Data</h2></summary>
 
 We obtained the dataset from Kaggle, but the data was originally scraped from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
@@ -29,7 +37,11 @@ We discuss some additional preprocessing steps in the Experimental Design sectio
 
 The values we seek to predict are in the `mvp_share` column, which represents the result of the MVP voting for each season.
 
-## **Experimental Design**:
+</details>
+
+
+<details>
+<summary><h2 style="font-size: 18px;">Experimental Design</h2></summary>
 
 **Note on compute resources**:
 
@@ -45,7 +57,8 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 * **CPU Vendor**: AuthenticAMD
 * **CPU Model**: AMD EPYC 7742 64-Core Processor
 
-### **Feature Selection Process**:
+<details>
+<summary><h3 style="font-size: 16px;">Feature Selection Process</h3></summary>
 
 In `FeatureSelection.ipynb`, we load in the main data frame (`df`) that we created and saved in `DataCleaning_EDA.ipynb`.
 
@@ -89,7 +102,10 @@ We chose to drop all of these except PTS because the latter effectively captures
 
 There are still some highly correlated features, but we proceed with these 10 and save them into a comma-separated Excel file (`df_separated.csv`) to use for modeling.
 
-### **Modeling**:
+</details>
+
+<details>
+<summary><h3 style="font-size: 16px;">Modeling</h3></summary>
 
 In `Models.ipynb`, we use `df_selected.csv` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
@@ -103,6 +119,11 @@ The table below highlights the best-performing model (the ExtraTrees regressor),
 
 ![](images/model_performance.png)
 
+</details>
+
+<details>
+<summary><h3 style="font-size: 16px;">Testing</h3></summary>
+
 ### **Testing**:
 
 In `Test.ipynb`, we load in the selected features as `df_selected`, the training dataset as `df`, the testing dataset containing the data for the 2018–22 seasons as `df_last`, and the best model as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
@@ -115,23 +136,42 @@ The image below displays the top four (by actual MVP share) players for the 2018
 
 TO BE CONTINUED AFTER TESTING ...
 
-## **Beyond the original specifications**
+</details>
+</details>
+
+<details>
+<summary><h2 style="font-size: 16px;">Beyond the original specifications</h2></summary>
 
 TBD...
+
+</details>
+
+<details>
+<summary><h2 style="font-size: 16px;">Results</h2></summary>
 
 ## **Results**
 
 TBD...
 
-## **Testing**
+</details>
+
+<details>
+<summary><h2 style="font-size: 16px;">Testing</h2></summary>
 
 TBD ...
 
-## **Conclusions**
+</details>
+
+<details>
+<summary><h2 style="font-size: 16px;">Conclusions</h2></summary>
 
 TBD ...
 
-## **Repo Manifest**:
+</details>
+</details>
+
+<details>
+<summary><h1 style="font-size: 16px;">Repo Manifest</h1></summary>
 
 <details>
 <summary><img src="images/ipynb.png" align="left" width="40" height="40" /> Jupyter Notebooks</summary>
@@ -188,4 +228,5 @@ TBD ...
   
   Custom function/pipeline for preprocessing and feature selection.
   
+</details>
 </details>
