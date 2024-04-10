@@ -13,14 +13,14 @@ Data Scientists and analysts have developed several metrics for determining a pl
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
 
 <details>
-<summary><h2 style="font-size: 18px;">Introduction</h2></summary>
+<summary><h3 style="font-size: 16px;">Introduction</h3></summary>
 
 TBD ...
 
 </details>
 
 <details>
-<summary><h2 style="font-size: 18px;">Data</h2></summary>
+<summary><h3 style="font-size: 16px;">Data</h3></summary>
 
 We obtained the dataset from Kaggle, but the data was originally scraped from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
@@ -46,9 +46,10 @@ The values we seek to predict are in the `mvp_share` column, which represents th
 
 
 <details>
-<summary><h2 style="font-size: 18px;">Experimental Design</h2></summary>
+<summary><h3 style="font-size: 16px;">Experimental Design</h3></summary>
 
-**Note on compute resources**:
+<details>
+<summary><h4 style="font-size: 14px;">Hardware Details</h4></summary>
 
 We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
 
@@ -61,9 +62,10 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 * **RAM**: 36GB
 * **CPU Vendor**: AuthenticAMD
 * **CPU Model**: AMD EPYC 7742 64-Core Processor
+</details>
 
 <details>
-<summary><h3 style="font-size: 16px;">Feature Selection Process</h3></summary>
+<summary><h4 style="font-size: 14px;">Feature Selection Process</h4></summary>
 
 In `FeatureSelection.ipynb`, we load in the main data frame (`df`) that we created and saved in `DataCleaning_EDA.ipynb`.
 
@@ -110,7 +112,7 @@ There are still some highly correlated features, but we proceed with these 10 an
 </details>
 
 <details>
-<summary><h3 style="font-size: 16px;">Modeling</h3></summary>
+<summary><h4 style="font-size: 14px;">Modeling</h4></summary>
 
 In `Models.ipynb`, we use `df_selected.csv` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
@@ -127,9 +129,7 @@ The table below highlights the best-performing model (the ExtraTrees regressor),
 </details>
 
 <details>
-<summary><h3 style="font-size: 16px;">Testing</h3></summary>
-
-### **Testing**:
+<summary><h4 style="font-size: 14px;">Testing</h4></summary>
 
 In `Test.ipynb`, we load in the selected features as `df_selected`, the training dataset as `df`, the testing dataset containing the data for the 2018–22 seasons as `df_last`, and the best model as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
 
@@ -145,23 +145,21 @@ TO BE CONTINUED AFTER TESTING ...
 </details>
 
 <details>
-<summary><h2 style="font-size: 16px;">Results</h2></summary>
-
-## **Results**
+<summary><h3 style="font-size: 16px;">Results</h3></summary>
 
 TBD...
 
 </details>
 
 <details>
-<summary><h2 style="font-size: 16px;">Testing</h2></summary>
+<summary><h3 style="font-size: 16px;">Testing</h3></summary>
 
 TBD ...
 
 </details>
 
 <details>
-<summary><h2 style="font-size: 16px;">Conclusions</h2></summary>
+<summary><h3 style="font-size: 16px;">Conclusions</h3></summary>
 
 TBD ...
 
