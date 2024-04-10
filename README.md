@@ -166,8 +166,6 @@ TBD ...
 </details>
 </details>
 
----
-
 <details>
 <summary><h1 style="font-size: 16px;">Repo Manifest</h1></summary>
 
