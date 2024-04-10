@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <h1 align="center">
-    <img src="images/logo.png" alt="mftool-java">
+    <img src="images/logo.png">
 </h1>
 <p align="center">
 
