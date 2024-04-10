@@ -7,6 +7,8 @@
 </h1>
 <p align="center">
 
+---
+
 # Sarah Elmasry, Ran Gao, Wyatt Scott, and Rish Sharma
 
 ---
@@ -167,6 +169,8 @@ TBD ...
 
 </details>
 </details>
+
+---
 
 <details>
 <summary><h1 style="font-size: 16px;">Repo Manifest</h1></summary>
