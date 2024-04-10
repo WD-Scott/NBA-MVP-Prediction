@@ -145,13 +145,6 @@ TO BE CONTINUED AFTER TESTING ...
 </details>
 
 <details>
-<summary><h2 style="font-size: 16px;">Beyond the original specifications</h2></summary>
-
-TBD...
-
-</details>
-
-<details>
 <summary><h2 style="font-size: 16px;">Results</h2></summary>
 
 ## **Results**
