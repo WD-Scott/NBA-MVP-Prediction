@@ -193,15 +193,15 @@ TBD ...
   
 - ### [df_clean.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_clean.csv):
   
-  Main .csv file used for training and validation.
+  Main file used for training and validation.
 
 - ### [df_last.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_last.csv):
   
-  Testing .csv file for examining model performance on last 5 seasons (2018-22).
+  Testing file for examining model performance on last 5 seasons (2018-22).
 
 - ### [df_selected.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_selected.csv):
 
-  Selected features .csv containing the subset of predictor variables.
+  Selected features containing the subset of predictor variables.
 
 - ### [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv):
 
