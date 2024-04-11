@@ -167,19 +167,19 @@ TBD ...
 <details>
 <summary><h3 style="font-size: 14px;">Jupyter Notebooks</h3></summary>
   
-- ### [FeatureSelection.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/FeatureSelection.ipynb):
+- #### [FeatureSelection.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/FeatureSelection.ipynb):
 
   Feature Selection notebook where we use the `preprocess_and_train` function from `preptrain.py` and ensemble the methods to generate the best 10 features.
   
-- ### [DataCleaning_EDA.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/DataCleaning_EDA.ipynb):
+- #### [DataCleaning_EDA.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/DataCleaning_EDA.ipynb):
   
   Exploratory notebook where the data is cleaned; includes some basic EDA.
 
-- ### [Models.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Models.ipynb):
+- #### [Models.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Models.ipynb):
 
   Modeling notebook where we use the selected features (from `df_selected.csv`) to train and evaluate a range of models and extract their feature importance. These results will inform how we weight features in the index.
 
-- ### [Test.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Test.ipynb):
+- #### [Test.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Test.ipynb):
 
   This notebook contains the code where we test our best model (from `Models.ipynb`) against the last five seasons. We include some visualizations showing the model prediction versus the actual values.
 
@@ -188,23 +188,23 @@ TBD ...
 <details>
 <summary><h3 style="font-size: 14px;">Data Files</h3></summary>
   
-- ### [df_clean.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_clean.csv):
+- #### [df_clean.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_clean.csv):
   
   Main file used for training and validation.
 
-- ### [df_last.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_last.csv):
+- #### [df_last.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_last.csv):
   
   Testing file for examining model performance on last 5 seasons (2018-22).
 
-- ### [df_selected.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_selected.csv):
+- #### [df_selected.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_selected.csv):
 
   Selected features containing the subset of predictor variables.
 
-- ### [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv):
+- #### [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv):
 
   Initial NBA mvp data set. Reduced in `DataCleaning_EDA.ipynb` to only include essential rows and columns of study.
 
-- ### [mvp_data_edit.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data_edit.csv)
+- #### [mvp_data_edit.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data_edit.csv)
 
   The cleaned data from `DataCleaning_EDA.ipynb`, used in `Test.ipynb` to merge and compare predicted and actual values.
   
@@ -213,15 +213,15 @@ TBD ...
 <details>
 <summary><h3 style="font-size: 14px;">Python Modules (helper functions, classes)</h3></summary>
   
-- ### [preptrain.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/preptrain.py):
+- #### [preptrain.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/preptrain.py):
   
   Custom function/pipeline for preprocessing and feature selection.
 
-- ### [modeling.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/modeling.py):
+- #### [modeling.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/modeling.py):
 
   Custom function/pipeline to train the ensemble and tree-based models and extract the best model.
 
-- ### [helper_functions.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/helper_functions.py):
+- #### [helper_functions.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/helper_functions.py):
 
 This module contains various helper functions for system information retrieval, model evaluation, and visualization.
     
@@ -257,15 +257,15 @@ This module contains various helper functions for system information retrieval, 
 <details>
 <summary><h3 style="font-size: 14px;">Other Files</h3></summary>
 
-- ### [images](https://github.com/WD-Scott/DS5110_Project/tree/main/images):
+- #### [images](https://github.com/WD-Scott/DS5110_Project/tree/main/images):
 
 The images folder contains various visualizations and images used in the README.md
 
-- ### [README.md](https://github.com/WD-Scott/DS5110_Project/blob/main/README.md):
+- #### [README.md](https://github.com/WD-Scott/DS5110_Project/blob/main/README.md):
 
 The README.md file includes the repository description and the report.
 
-- ### [requirements.txt](https://github.com/WD-Scott/DS5110_Project/blob/main/requirements.txt):
+- #### [requirements.txt](https://github.com/WD-Scott/DS5110_Project/blob/main/requirements.txt):
 
 This file includes all of the necessary libraries and versions for running our code.
 </details>
