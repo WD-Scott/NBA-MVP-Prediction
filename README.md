@@ -72,6 +72,11 @@ Below is a brief overview of the steps taken to gather the index values and mode
 
 **Step 3**: Run `Test.ipynb` to test the best model against the unseen data → runtime: ~2.42 minutes
 
+<h1 align="center">
+    <img src="images/pipeline.png">
+</h1>
+<p align="center">
+
 </details>
 
 <details>
