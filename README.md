@@ -12,6 +12,22 @@
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
 
+## Table of Contents:
+
+<!--ts-->
+   * [Introduction](#introduction)
+   * [Data](#data)
+   * [Experimental Design](#experimental-design)
+      * [Hardware Details](#hardware-details)
+      * [Design Overview](#design-overview)
+      * [Feature Selection Process](#feature-selection-process)
+      * [Modeling](#modeling)
+      * [Index Building](#index-building)
+   * [Results](#results)
+   * [Testing](#testing)
+   * [Conclusions](#conclusions)
+<!--te-->
+
 <details>
 <summary><h3 style="font-size: 16px;">Introduction</h3></summary>
 
