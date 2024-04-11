@@ -22,21 +22,20 @@ Data Scientists and analysts have developed several metrics for determining a pl
 <details>
 <summary><h3 style="font-size: 16px;">Data</h3></summary>
 
-We obtained the dataset from Kaggle, but the data was originally scraped from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
+We obtained the dataset from [JK-Future](https://github.com/JK-Future-GitHub/NBA_MVP), who originally scraped the data from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
-The dataset is stored in a comma-separated Excel sheet, `mvp_data.csv`, which we load into `DataCleaning_EDA.ipynb` and perform some cleaning and aggregation steps, including:
+The dataset is stored in `mvp_data.csv`, which we load into `DataCleaning_EDA.ipynb` and perform some cleaning and aggregation steps, including:
 
 * Fill missing values for the Rank, mvp_share, and Trp Dbl (Triple Double) columns
 * Normalize the Trp Dbl column by dividing it by G (the total number of games played in a given season)
 * Convert G (Games) and Season columns to integer data type
-* Filter the entire data frame (`df`) to include only players that meet the 40-game requirement necessary to be considered for the MVP award
-* Create the Rk_Conf (Conference Ranking) column – calculate conference rankings for each season based on W (the number of wins), then re-rank the conference rankings within each season and conference group.
+* Filter the entire data frame (df) to include only players that meet the 40-game requirement necessary to be considered for the MVP award
+* Create the Rk_Conf (Conference Ranking) column – calculate conference rankings for each season based on W (the number of wins), then re-rank the conference rankings within each season and conference group
 * Save the edited data frame thus far to `mvp_data_edit.csv` (we use this in `Test.ipynb` to merge predicted values with actual and compare results)
 * Drop the Conference and W (Wins) columns
-* Create a separate data frame (`df_last`) with the data for the most recent five seasons (2018–22), which we use to test our final model and index in `Test.ipynb`
-* Create last_names and last_seasons
-* Check for missing values: We found many missing values for seasons before 1980; for example, 3P (Three-pointers) were not introduced in the NBA until 1979–80, and there are a lot of missing values before then, so we drop any season before 1980.
-* Save `df` and `df_last` to comma-separated Excel files
+* Create a separate data frame (df_last) with the data for the most recent five seasons (2018–22), which we use to test our final model and index in `Test.ipynb`
+* Check for missing values: We found many missing values for seasons before 1980; for example, 3P (Three-pointers) were not introduced in the NBA until 1979–80, and there are a lot of missing values before then, so we drop any season before 1980
+* Save df and df_last to comma-separated Excel files
 
 We discuss some additional preprocessing steps in the Experimental Design section below, as these steps relate to the project's feature selection and modeling phases.
 
@@ -54,14 +53,25 @@ The values we seek to predict are in the `mvp_share` column, which represents th
 We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
 
 * **System**: Linux
-* **Node Name**: udc-an34-1
 * **Release**: 4.18.0-425.10.1.el8_7.x86_64
-* **Version**: #1 SMP Thu Jan 12 16:32:13 UTC 2023
 * **Machine**: x86_64
 * **CPU Cores**: 28
 * **RAM**: 36GB
 * **CPU Vendor**: AuthenticAMD
 * **CPU Model**: AMD EPYC 7742 64-Core Processor
+</details>
+
+<details>
+<summary><h4 style="font-size: 14px;">Design Overview</h4></summary>
+
+Below is a brief overview of the steps taken to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow. Note that we measured the estimated runtimes listed beside each step using the previously specified compute resources:
+
+**Step 1**: Run `FeatureSelection.ipynb` to select the top 10 predictor variables and save them to `df_selected.csv` → runtime: ~10 minutes
+
+**Step 2**: Run `Models.ipynb` to fit models on the selected features, compare model results, and save the best-performing model → runtime: ~4.72 minutes
+
+**Step 3**: Run `Test.ipynb` to test the best model against the unseen data → runtime: ~2.42 minutes
+
 </details>
 
 <details>
@@ -103,43 +113,31 @@ We chose to drop all of these except PTS because the latter effectively captures
 - VORP = Value Over Replacement Player
 - PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a>)
 - TOV = Turnovers
-- AST = Assists
 - TS% = True Shooting Percentage
-- Rk_Year = Team league ranking
+- OBPM = Offensive Box Plus-Minus
+- Rk_Conf = Team Conference Ranking
 
-There are still some highly correlated features, but we proceed with these 10 and save them into a comma-separated Excel file (`df_separated.csv`) to use for modeling.
+There are still some highly correlated features, but we proceed with these 10 and save them to a `df_selected.csv` to use for modeling.
 
 </details>
 
 <details>
 <summary><h4 style="font-size: 14px;">Modeling</h4></summary>
 
-In `Models.ipynb`, we use `df_selected.csv` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
+In `Models.ipynb`, we use `modeling.py` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
-The image below displays the average feature importance score for each feature. 
+In `Test.ipynb`, we load in the selected features, the training dataset, the testing dataset containing the data for the 2018–22 seasons, and the best model from `Models.ipynb`. We filter the training and testing data to include only the selected features.
 
-![](images/avg_importance.png)
+We then perform an 80-20 train/test split of the training data and test the best model from `Models.ipynb`. Next, we use the best model to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
 
-As the table shows, on average, Win Shares (WS) and Value Over Replacement Play (VORP) are the most important features. 
-
-The table below highlights the best-performing model (the ExtraTrees regressor), which barely outperforms the Extreme GradientBoosting Regressor (XGBoost). We save the best ExtraTrees model from `Models.ipynb` and import it into `Test.ipynb`, where we test it against the 2018–22 seasons.
-
-![](images/model_performance.png)
+The Results and Testing sections below discuss the modeling results.
 
 </details>
 
 <details>
-<summary><h4 style="font-size: 14px;">Testing</h4></summary>
+<summary><h4 style="font-size: 14px;">Index Building</h4></summary>
 
-In `Test.ipynb`, we load in the selected features as `df_selected`, the training dataset as `df`, the testing dataset containing the data for the 2018–22 seasons as `df_last`, and the best model as `XTrees`. We filter `df` and `df_last` to include only the predictors in `df_selected`. 
-
-We then perform an 80-20 train/test split of `df` and train and test `XTrees`. Next, we use `XTrees` to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
-
-The image below displays the top four (by actual MVP share) players for the 2018–22 seasons and compares the predictions to the actual values. 
-
-![](images/pred_actual.png)
-
-TO BE CONTINUED AFTER TESTING ...
+TBD...
 
 </details>
 </details>
