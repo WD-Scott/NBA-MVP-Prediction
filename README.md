@@ -215,14 +215,6 @@ TBD ...
 <details>
 <summary><img src="images/py.png" align="left" width="40" height="40" /> Python Module Files (helper functions, classes)</summary>
   
-- ### [pltcorrheatmap.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/pltcorrheatmap.py):
-  
-  Custom function to generate correlation heat maps to help determine multicollnearity as we examine feature importance.
-
-- ### [print_imps.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/print_imps.py):
-
-  Custom function to print model feature importance scores for the selected features.
-
 - ### [preptrain.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/preptrain.py):
   
   Custom function/pipeline for preprocessing and feature selection.
@@ -231,13 +223,38 @@ TBD ...
 
   Custom function/pipeline to train the ensemble and tree-based models and extract the best model.
 
-- ### [model_comp.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/model_comp.py):
+- ### [helper_functions.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/helper_functions.py):
 
-  Custom function to plot and compare model performance.
+ This module contains various helper functions for system information retrieval, model evaluation, and visualization.
 
-- ### [get_info.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/get_info.py)
+   **Functions**:
+   - get_hardware_details():
+     
+     Retrieve basic hardware details of the system.
+     
+   - print_importances(features, model):
+     
+     Print the feature importances of a model.
+     
+   - print_dict_imps(feature_importances):
+     
+     Print the feature importances in a visually appealing table format side-by-side.
 
-  Custom function to get hardware and compute details.
+   - avg_imps(feature_importances):
+     
+     Calculate the average feature importances across different methods.
+
+   - create_imp_df(model_names, models, feature_names):
+     
+     Create a DataFrame of feature importances for each model.
+
+   - plot_corr_heatmap(corr_matrix, selected_feature_names, threshold=0.65, width=7, height=4):
+     
+     Plot a correlation heatmap for selected features.
+
+   - plot_model_performance(model_names, r_sqs, MSE_s):
+     
+     Plot the R-squared and MSE values of different regression models.
   
 </details>
 </details>
