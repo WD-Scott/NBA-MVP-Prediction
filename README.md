@@ -106,16 +106,16 @@ The results for the top 10 features include several highly correlated features r
 
 We chose to drop all of these except PTS because the latter effectively captures the others. The resulting top ten features are:
 
-- OWS = Offensive Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a>)
+- WS/48 = Win Shares per 48
 - MP = Minutes Played
 - PTS = Points
 - WS = Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares</a>)
 - VORP = Value Over Replacement Player
 - PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a>)
-- TOV = Turnovers
-- TS% = True Shooting Percentage
-- OBPM = Offensive Box Plus-Minus
-- Rk_Conf = Team Conference Ranking
+- eFG% = Effective Field Goal Percentage
+- AST = Assists
+- Rk_Year = Team Ranking
+- DBPM = Defensive Box Plus-Minus
 
 There are still some highly correlated features, but we proceed with these 10 and save them to a `df_selected.csv` to use for modeling.
 
