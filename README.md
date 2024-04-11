@@ -29,15 +29,11 @@
    * [Conclusions](#conclusions)
 <!--te-->
 
-<details>
-<summary><h3 style="font-size: 16px;">Introduction</h3></summary>
+## Introduction
 
 Data Scientists and analysts have developed several metrics for determining a player's value to their team's success. Prominent examples include Value Over Replacement Player (VORP), Box Plus/Minus (BPM), and FiveThirtyEight's Robust Algorithm (using) Player Tracking (and) On/Off Ratings (RAPTOR)​. We aim to develop a multivariate index that weighs these parameters based on how well they predict MVP rankings, then test it on unseen data for the most recent five seasons to see if our "MVP index" correctly predicts the MVP rankings.​ We will experiment with the index formula and compare it to other methods developed by reputable analyst sources.
 
-</details>
-
-<details>
-<summary><h3 style="font-size: 16px;">Data</h3></summary>
+## Data
 
 We obtained the dataset from [JK-Future](https://github.com/JK-Future-GitHub/NBA_MVP), who originally scraped the data from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
@@ -58,14 +54,9 @@ We discuss some additional preprocessing steps in the Experimental Design sectio
 
 The values we seek to predict are in the `mvp_share` column, which represents the result of the MVP voting for each season.
 
-</details>
+## Experimental Design
 
-
-<details>
-<summary><h3 style="font-size: 16px;">Experimental Design</h3></summary>
-
-<details>
-<summary><h4 style="font-size: 14px;">Hardware Details</h4></summary>
+### Hardware Details
 
 We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
 
@@ -76,10 +67,8 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 * **RAM**: 36GB
 * **CPU Vendor**: AuthenticAMD
 * **CPU Model**: AMD EPYC 7742 64-Core Processor
-</details>
 
-<details>
-<summary><h4 style="font-size: 14px;">Design Overview</h4></summary>
+#### Design Overview
 
 Below is a brief overview of the steps taken to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow.
 
@@ -88,10 +77,7 @@ Below is a brief overview of the steps taken to gather the index values and mode
 </h1>
 <p align="center">
 
-</details>
-
-<details>
-<summary><h4 style="font-size: 14px;">Feature Selection Process</h4></summary>
+#### Feature Selection Process
 
 In `FeatureSelection.ipynb`, we load in the main data frame (`df`) that we created and saved in `DataCleaning_EDA.ipynb`.
 
@@ -133,10 +119,7 @@ We chose to drop all of these except PTS because the latter effectively captures
 
 There are still some highly correlated features, but we proceed with these 10 and save them to a `df_selected.csv` to use for modeling.
 
-</details>
-
-<details>
-<summary><h4 style="font-size: 14px;">Modeling</h4></summary>
+#### Modeling
 
 In `Models.ipynb`, we use `modeling.py` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
@@ -146,36 +129,23 @@ We then perform an 80-20 train/test split of the training data and test the best
 
 The Results and Testing sections below discuss the modeling results.
 
-</details>
-
-<details>
-<summary><h4 style="font-size: 14px;">Index Building</h4></summary>
+#### Index Building
 
 TBD...
 
-</details>
-</details>
-
-<details>
-<summary><h3 style="font-size: 16px;">Results</h3></summary>
+### Results
 
 TBD...
 
-</details>
-
-<details>
-<summary><h3 style="font-size: 16px;">Testing</h3></summary>
+### Testing
 
 TBD ...
 
-</details>
 
-<details>
-<summary><h3 style="font-size: 16px;">Conclusions</h3></summary>
+### Conclusions
 
 TBD ...
 
-</details>
 </details>
 
 <details>
