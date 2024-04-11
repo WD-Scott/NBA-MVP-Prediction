@@ -229,6 +229,10 @@ TBD ...
 - ### [model_comp.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/model_comp.py):
 
   Custom function to plot and compare model performance.
+
+- ### [get_info.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/get_info.py)
+
+  Custom function to get hardware and compute details.
   
 </details>
 </details>
