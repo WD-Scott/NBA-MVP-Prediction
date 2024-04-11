@@ -8,6 +8,34 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.colors import ListedColormap
 
+"""
+helper_functions.py
+
+This module contains various helper functions for system information retrieval, model evaluation, and visualization.
+
+Functions:
+1. get_hardware_details():
+   Retrieve basic hardware details of the system.
+
+2. print_importances(features, model):
+   Print the feature importances of a model.
+
+3. print_dict_imps(feature_importances):
+   Print the feature importances in a visually appealing table format side-by-side.
+
+4. avg_imps(feature_importances):
+   Calculate the average feature importances across different methods.
+
+5. create_imp_df(model_names, models, feature_names):
+   Create a DataFrame of feature importances for each model.
+
+6. plot_corr_heatmap(corr_matrix, selected_feature_names, threshold=0.65, width=7, height=4):
+   Plot a correlation heatmap for selected features.
+
+7. plot_model_performance(model_names, r_sqs, MSE_s):
+   Plot the R-squared and MSE values of different regression models.
+"""
+
 def get_hardware_details():
     """
     Retrieve basic hardware details of the system.
