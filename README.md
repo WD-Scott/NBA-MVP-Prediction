@@ -165,7 +165,7 @@ TBD ...
 <summary><h1 style="font-size: 16px;">Repo Manifest</h1></summary>
 
 <details>
-<summary><img src="images/ipynb.png" align="left" width="40" height="40" /> Jupyter Notebooks</summary>
+<summary><h3 style="font-size: 14px;">Jupyter Notebooks</h3></summary>
   
 - ### [FeatureSelection.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/FeatureSelection.ipynb):
 
@@ -184,9 +184,9 @@ TBD ...
   This notebook contains the code where we test our best model (from `Models.ipynb`) against the last five seasons. We include some visualizations showing the model prediction versus the actual values.
 
 </details>
-<br>
+
 <details>
-<summary><img src="images/csv.png" align="left" width="40" height="40" /> Data Files</summary>
+<summary><h3 style="font-size: 14px;">Data Files</h3></summary>
   
 - ### [df_clean.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/df_clean.csv):
   
@@ -209,9 +209,9 @@ TBD ...
   The cleaned data from `DataCleaning_EDA.ipynb`, used in `Test.ipynb` to merge and compare predicted and actual values.
   
 </details>
-<br>
+
 <details>
-<summary><img src="images/py.png" align="left" width="40" height="40" /> Python Module Files (helper functions, classes)</summary>
+<summary><h3 style="font-size: 14px;">Python Modules (helper functions, classes)</h3></summary>
   
 - ### [preptrain.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/preptrain.py):
   
@@ -251,6 +251,22 @@ This module contains various helper functions for system information retrieval, 
 
 - `plot_model_performance(model_names, r_sqs, MSE_s)`:
   
-  Plot the R-squared and MSE values of different regression models. 
+  Plot the R-squared and MSE values of different regression models.
+</details>
+
+<details>
+<summary><h3 style="font-size: 14px;">Other Files</h3></summary>
+
+- ### [images](https://github.com/WD-Scott/DS5110_Project/tree/main/images):
+
+The images folder contains various visualizations and images used in the README.md
+
+- ### [README.md](https://github.com/WD-Scott/DS5110_Project/blob/main/README.md):
+
+The README.md file includes the repository description and the report.
+
+- ### [requirements.txt](https://github.com/WD-Scott/DS5110_Project/blob/main/requirements.txt):
+
+This file includes all of the necessary libraries and versions for running our code.
 </details>
 </details>
