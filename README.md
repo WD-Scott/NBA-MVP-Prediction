@@ -204,7 +204,13 @@ TBD ...
   Selected features .csv containing the subset of predictor variables.
 
 - ### [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv):
+
   Initial NBA mvp data set. Reduced in `DataCleaning_EDA.ipynb` to only include essential rows and columns of study.
+
+- ### [mvp_data_edit.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data_edit.csv)
+
+  The cleaned data from `DataCleaning_EDA.ipynb`, used in `Test.ipynb` to merge and compare predicted and actual values.
+  
 </details>
 <br>
 <details>
