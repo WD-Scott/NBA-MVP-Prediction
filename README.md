@@ -56,7 +56,7 @@ The values we seek to predict are in the `mvp_share` column, which represents th
 ## Experimental Design
 
 <details>
-<summary><strong>Hardware Details</strong></summary>
+<summary><strong>Click here to see hardware and compute details</strong></summary>
 
 We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
 
