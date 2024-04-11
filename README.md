@@ -97,11 +97,9 @@ We perform robust feature selection to reduce model and index complexity. The ma
 
 For hyperparameter tuning, we define a reasonably extensive parameter grid for each method and use Bayesian optimization with five-fold cross-validation to sample parameter settings from the specified distributions.
 
-In `FeatureSelection.ipynb`, we run the `preprocess_and_train function` from `preptrain.py` and use the `print_dict_imps` function from `print_imps.py` to print tables of the feature importances for each method, which we store in a Python dictionary via the `preprocess_and_train function`. We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. 
+In `FeatureSelection.ipynb`, we run the `preprocess_and_train function` from `preptrain.py` and use the `print_dict_imps` function from `helper_functions.py` to print tables of the feature importances for each method, which we store in a Python dictionary via the `preprocess_and_train function`. We then use the `avg_imp` function from `helper_functions.py` to display the average feature importance across the eight methods. 
 
-We then use the `avg_imp` function from `print_imps.py` to display the average feature importance across the eight methods. The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
-
-The results for the top 10 features include several highly correlated features related to scoring, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts), and PTS (points).
+The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
 
 We chose to drop all of these except PTS because the latter effectively captures the others. The resulting top ten features are:
 
