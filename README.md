@@ -64,13 +64,7 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 <details>
 <summary><h4 style="font-size: 14px;">Design Overview</h4></summary>
 
-Below is a brief overview of the steps taken to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow. Note that we measured the estimated runtimes listed beside each step using the previously specified compute resources:
-
-**Step 1**: Run `FeatureSelection.ipynb` to select the top 10 predictor variables and save them to `df_selected.csv` → runtime: ~10 minutes
-
-**Step 2**: Run `Models.ipynb` to fit models on the selected features, compare model results, and save the best-performing model → runtime: ~4.72 minutes
-
-**Step 3**: Run `Test.ipynb` to test the best model against the unseen data → runtime: ~2.42 minutes
+Below is a brief overview of the steps taken to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow.
 
 <h1 align="center">
     <img src="images/pipeline.png">
