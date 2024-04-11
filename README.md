@@ -225,36 +225,34 @@ TBD ...
 
 - ### [helper_functions.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/helper_functions.py):
 
- This module contains various helper functions for system information retrieval, model evaluation, and visualization.
-
-   **Functions**:
-   - get_hardware_details():
-     
-     Retrieve basic hardware details of the system.
-     
-   - print_importances(features, model):
-     
-     Print the feature importances of a model.
-     
-   - print_dict_imps(feature_importances):
-     
-     Print the feature importances in a visually appealing table format side-by-side.
-
-   - avg_imps(feature_importances):
-     
-     Calculate the average feature importances across different methods.
-
-   - create_imp_df(model_names, models, feature_names):
-     
-     Create a DataFrame of feature importances for each model.
-
-   - plot_corr_heatmap(corr_matrix, selected_feature_names, threshold=0.65, width=7, height=4):
-     
-     Plot a correlation heatmap for selected features.
-
-   - plot_model_performance(model_names, r_sqs, MSE_s):
-     
-     Plot the R-squared and MSE values of different regression models.
+This module contains various helper functions for system information retrieval, model evaluation, and visualization.
+    
+- `get_hardware_details()`:
   
+  Retrieve basic hardware details of the system.
+
+- `print_importances(features, model)`:
+  
+  Print the feature importances of a model.
+
+- `print_dict_imps(feature_importances)`:
+  
+  Print the feature importances in a visually appealing table format side-by-side.
+
+- `avg_imps(feature_importances)`:
+  
+  Calculate the average feature importances across different methods.
+
+- `create_imp_df(model_names, models, feature_names)`:
+  
+  Create a DataFrame of feature importances for each model.
+
+- `plot_corr_heatmap(corr_matrix, selected_feature_names, threshold=0.65, width=7, height=4)`:
+  
+  Plot a correlation heatmap for selected features.
+
+- `plot_model_performance(model_names, r_sqs, MSE_s)`:
+  
+  Plot the R-squared and MSE values of different regression models. 
 </details>
 </details>
