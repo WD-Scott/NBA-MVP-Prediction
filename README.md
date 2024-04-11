@@ -222,11 +222,11 @@ TBD ...
   
   Custom function/pipeline for preprocessing and feature selection.
 
-- ## [modeling.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/modeling.py):
+- ### [modeling.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/modeling.py):
 
   Custom function/pipeline to train the ensemble and tree-based models and extract the best model.
 
-- ## [model_comp.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/model_comp.py):
+- ### [model_comp.py](https://github.com/WD-Scott/DS5110_Project/blob/main/Python%20Modules/model_comp.py):
 
   Custom function to plot and compare model performance.
   
