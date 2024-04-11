@@ -12,7 +12,8 @@
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
 
-## Table of Contents:
+
+## Table of Contents
 
 <!--ts-->
    * [Introduction](#introduction)
