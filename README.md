@@ -78,7 +78,7 @@ We use Rivanna – the University of Virginia's High-Performance Computing (HPC)
 Below is an overview of the steps to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow.
 
 <h1 align="center">
-    <img src="images/pipeline.png">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/pipeline.png">
 </h1>
 <p align="center">
 
