@@ -39,7 +39,7 @@ We obtained the dataset from [JK-Future](https://github.com/JK-Future-GitHub/NBA
 We store the dataset in [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv) and load it into [DataCleaning_EDA.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/DataCleaning_EDA.ipynb), where we perform data cleaning and aggregation.
 
 <details>
-<summary><strong>Click here to view how we cleaned the data</strong></summary>
+<summary><strong>Click here for details about how we cleaned the data.</strong></summary>
 
 * Fill missing values for the Rank, mvp_share, and Trp Dbl (Triple Double) columns
 * Normalize the Trp Dbl column by dividing it by G (the total number of games played in a given season)
@@ -60,7 +60,7 @@ The values we seek to predict are in the mvp_share column, which represents the 
 ## Experimental Design
 
 <details>
-<summary><strong>Click here to view our hardware and computing details</strong></summary>
+<summary><strong>Click here for details about our hardware and compute resources.</strong></summary>
 
 We use Rivanna – the University of Virginia's High-Performance Computing (HPC) system – with the following hardware details:
 
