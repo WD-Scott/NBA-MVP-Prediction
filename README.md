@@ -36,7 +36,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 We obtained the dataset from [JK-Future](https://github.com/JK-Future-GitHub/NBA_MVP), who originally scraped the data from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
-The dataset is stored in `mvp_data.csv`, which we load into `DataCleaning_EDA.ipynb` and perform data cleaning and aggregation.
+The dataset is stored in [`mvp_data.csv`](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv), which we load into [`DataCleaning_EDA.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/DataCleaning_EDA.ipynb) and perform data cleaning and aggregation.
 
 <details>
 <summary><strong>Click here to view how we cleaned the data</strong></summary>
@@ -84,9 +84,9 @@ Below is a brief overview of the steps taken to gather the index values and mode
 
 #### Feature Selection Process
 
-In `FeatureSelection.ipynb`, we load in the main data frame (`df`) that we created and saved in `DataCleaning_EDA.ipynb`.
+In [`FeatureSelection.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/FeatureSelection.ipynb), we load in the main data frame (`df`) that we created and saved in [`DataCleaning_EDA.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/DataCleaning_EDA.ipynb).
 
-We perform robust feature selection to reduce model and index complexity. The main code we use for feature selection can be found in `preptrain.py`. This Python module file includes a function, `preprocess_and_train`, which we employ in `FeatureSelection.ipynb`. We wrote the function to perform the following:
+We perform robust feature selection to reduce model and index complexity. The main code we use for feature selection can be found in [`preptrain.py`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/preptrain.py). This Python module file includes the `preprocess_and_train` function, which we employ in [`FeatureSelection.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/FeatureSelection.ipynb). We wrote the `preprocess_and_train` function to perform the following:
 
 * Impute missing values with the median value for numeric features, scale the features using standardization (subtracting the mean and dividing by the standard deviation) and apply one-hot encoding for categorical features.
 
@@ -105,7 +105,7 @@ We perform robust feature selection to reduce model and index complexity. The ma
 
 For hyperparameter tuning, we define a reasonably extensive parameter grid for each method and use Bayesian optimization with five-fold cross-validation to sample parameter settings from the specified distributions.
 
-In `FeatureSelection.ipynb`, we run the `preprocess_and_train function` from `preptrain.py` and use the `print_dict_imps` function from `helper_functions.py` to print tables of the feature importances for each method, which we store in a Python dictionary via the `preprocess_and_train function`. We then use the `avg_imp` function from `helper_functions.py` to display the average feature importance across the eight methods. 
+In `FeatureSelection.ipynb`, we run the `preprocess_and_train function` from [`preptrain.py`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/preptrain.py) and use the `print_dict_imps` function from [`helper_functions.py`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to print tables of the feature importances for each method, which we store in a Python dictionary via the `preprocess_and_train` function. We then use the `avg_imp` function from [`helper_functions.py`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to display the average feature importance across the eight methods. 
 
 The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
 
@@ -122,15 +122,15 @@ We chose to drop all of these except PTS because the latter effectively captures
 - Rk_Year = Team Ranking
 - DBPM = Defensive Box Plus-Minus
 
-There are still some highly correlated features, but we proceed with these 10 and save them to a `df_selected.csv` to use for modeling.
+There are still some highly correlated features, but we proceed with these 10 and save them to a [`df_selected.csv`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Data%20Files/df_selected.csv) to use for modeling.
 
 #### Modeling
 
-In `Models.ipynb`, we use `modeling.py` to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
+In [`Models.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Models.ipynb), we use [`modeling.py`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/modeling.py) to train and test only the ensemble and tree-based methods, as these are best suited for our next task — finding the best model we can and using the feature importance scores to inform our index design.
 
-In `Test.ipynb`, we load in the selected features, the training dataset, the testing dataset containing the data for the 2018–22 seasons, and the best model from `Models.ipynb`. We filter the training and testing data to include only the selected features.
+In [`Test.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Test.ipynb), we load in the selected features, the training dataset, the testing dataset containing the data for the 2018–22 seasons, and the best model from [`Models.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Models.ipynb). We filter the training and testing data to include only the selected features.
 
-We then perform an 80-20 train/test split of the training data and test the best model from `Models.ipynb`. Next, we use the best model to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
+We then perform an 80-20 train/test split of the training data and test the best model from [`Models.ipynb`](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Models.ipynb). Next, we use the best model to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
 
 The Results and Testing sections below discuss the modeling results.
 
