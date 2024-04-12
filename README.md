@@ -140,7 +140,23 @@ TBD...
 
 ### Results
 
-TBD...
+The feature selection process originally produced a set of ten highly correlated features, the most correlated of which are related to scoring, as displayed below in the correlation heatmap:
+
+<h1 align="center">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/corr_scoring.png">
+</h1>
+<p align="center">
+
+As previously mentioned, we dropped FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts), and retained PTS (points).
+
+Now, the top ten features include those displayed in the correlation heatmap below:
+
+<h1 align="center">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/corr_final.png">
+</h1>
+<p align="center">
+
+TO BE CONTINUED AFTER FURTHER VISUALIZATION
 
 ### Testing
 
