@@ -36,7 +36,7 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 We obtained the dataset from [JK-Future](https://github.com/JK-Future-GitHub/NBA_MVP), who originally scraped the data from Basketball-Reference via automated HTML parsing. The dataset contains statistics for National Basketball Association (NBA) players relevant to determining the Most Valuable Player (MVP) in a season and has 7,329 entries with 53 columns. The dataset is significant in its breadth and depth of coverage.
 
-The dataset is stored in [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv), which we load into [DataCleaning_EDA.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/DataCleaning_EDA.ipynb), where we perform data cleaning and aggregation.
+We store the dataset in [mvp_data.csv](https://github.com/WD-Scott/DS5110_Project/blob/main/Data%20Files/mvp_data.csv) and load it into [DataCleaning_EDA.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/DataCleaning_EDA.ipynb), where we perform data cleaning and aggregation.
 
 <details>
 <summary><strong>Click here to view how we cleaned the data</strong></summary>
@@ -53,16 +53,16 @@ The dataset is stored in [mvp_data.csv](https://github.com/WD-Scott/DS5110_Proje
 * Save `df` and `df_last` to comma-separated Excel files
 </details>
 
-We discuss some additional preprocessing steps in the Experimental Design section below, as these steps relate to the project's feature selection and modeling phases.
+We discuss additional preprocessing steps in the Experimental Design section below, as these steps relate to the project's feature selection and modeling phases.
 
-The values we seek to predict are in the `mvp_share` column, which represents the result of the MVP voting for each season.
+The values we seek to predict are in the mvp_share column, which represents the MVP voting result for each season.
 
 ## Experimental Design
 
 <details>
-<summary><strong>Click here to view our hardware and compute details</strong></summary>
+<summary><strong>Click here to view our hardware and computing details</strong></summary>
 
-We use Rivanna – the University of Virginia’s High-Performance Computing (HPC) system – with the following hardware details:
+We use Rivanna – the University of Virginia's High-Performance Computing (HPC) system – with the following hardware details:
 
 - **System**: Linux
 - **Release**: 4.18.0-425.10.1.el8_7.x86_64
@@ -75,7 +75,7 @@ We use Rivanna – the University of Virginia’s High-Performance Computing (HP
 
 #### Design Overview
 
-Below is a brief overview of the steps taken to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow.
+Below is an overview of the steps to gather the index values and model results. We detail these steps further in the Feature Selection Process, Modeling, Results, and Testing sections that follow.
 
 <h1 align="center">
     <img src="images/pipeline.png">
@@ -105,7 +105,7 @@ For hyperparameter tuning, we define a reasonably extensive parameter grid for e
 
 After running the `preprocess_and_train` function, we use the `print_dict_imps` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to print tables of the feature importances for each method, which the `preprocess_and_train` function stores in a Python dictionary. We then use the `avg_imp` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to display the average feature importance across the eight methods. 
 
-The results for the top 10 features included several features related to points (scoring) that are highly correlated, including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts) and PTS (points).
+The results for the top 10 features included several highly correlated features related to points (scoring), including FT (free throws), 2P (two-pointers), FG (field goals), FGA (field goal attempts), FTA (free throw attempts), and PTS (points).
 
 We chose to drop all of these except PTS because the latter effectively captures the others. The resulting top ten features are:
 
@@ -120,7 +120,7 @@ We chose to drop all of these except PTS because the latter effectively captures
 - Rk_Year = Team Ranking
 - DBPM = Defensive Box Plus-Minus
 
-There are still some highly correlated features, but we proceed with these 10 and save them to [df_selected.csv](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Data%20Files/df_selected.csv) to use for modeling.
+There are still some highly correlated features, but we proceed with these ten and save them to [df_selected.csv](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Data%20Files/df_selected.csv) to use for modeling.
 
 #### Modeling
 
