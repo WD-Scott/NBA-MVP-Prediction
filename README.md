@@ -130,7 +130,7 @@ In [Test.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207
 
 We then perform an 80-20 train/test split of the training data and test the best model. Next, we use the best model to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
 
-The Results and Testing sections below discuss the modeling results.
+The Results section below discuss the results from our feature selection and modeling processes, and the Testing section contains results from testing our best model and index.
 
 #### Index Building
 
