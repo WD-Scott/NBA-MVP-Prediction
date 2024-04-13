@@ -169,7 +169,9 @@ We feed these ten features into the `train_models` function, which returns sever
 </h1>
 <p align="center">
 
-TO BE CONTINUED AFTER FURTHER VISUALIZATION
+The chart shows clearly that the best model is the Extreme Gradient Boosting Regressor (XGB), and the `train_models` function saves the best model to `best_model.pkl` using the `joblib` library.
+
+We import the best model into [Test.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Test.ipynb) to perform testing on the unseen data, and we discuss those results in the next subsection.
 
 ### Testing
 <a name="testing"></a>
