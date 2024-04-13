@@ -10,9 +10,6 @@
 # Sarah Elmasry, Ran Gao, Wyatt Scott, and Rish Sharma
 
 
-<iframe src="https://wd-scott.github.io/DS5110_Project/assets/interactive_chart.html" width="800" height="600"></iframe>
-
-
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
 
