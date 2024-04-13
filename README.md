@@ -9,10 +9,6 @@
 
 # Sarah Elmasry, Ran Gao, Wyatt Scott, and Rish Sharma
 
-## Interactive Plot
-
-You can interact with the chart by clicking [here](https://wd-scott.github.io/DS5110_Project/images/interactive_chart.html).
-
 
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
