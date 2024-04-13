@@ -9,8 +9,7 @@
 
 # Sarah Elmasry, Ran Gao, Wyatt Scott, and Rish Sharma
 
-You can view the interactive Plotly graph [here](https://raw.githubusercontent.com/WD-Scott/DS5110_Project/main/docs/interactive_chart.html
-).
+You can view the interactive Plotly graph [here](https://raw.githubusercontent.com/WD-Scott/DS5110_Project/main/docs/interactive_chart.html).
 
 
 <details>
