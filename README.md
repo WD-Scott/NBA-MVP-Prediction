@@ -178,12 +178,14 @@ The chart below displays the predicted values from the best model compared to th
 </h1>
 <p align="center">
 
-Below we show whether the model correctly predicted each of the top four rankings for the five most-recent seasons:
+The table below shows whether the model correctly predicted the top four rankings for the 2018–22 seasons; the model accurately predicts which players are in the top four each season but doesn't always order them correctly. 
 
 <h1 align="center">
     <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/table_ranks.png">
 </h1>
 <p align="center">
+
+The predictions for the 2018 season were perfect in terms of ranking, but the model's rankings for the next four seasons are slightly off. The rankings for 1st and 2nd for the 2019 season are correct, but the model swaps the 3rd and 4th place candidates. For the 2020 season, the model correctly ranks the 1st and 4th place candidates but swaps 2nd and 3rd place. The model correctly ranks the 1st and 3rd place candidates for the 2021 season but places 2nd and 4th out of order. For the 2022 season, the model incorrectly ranks the 1st and 3rd place candidates but correctly ranks 2nd and 4th.
       
 ### Testing
 <a name="testing"></a>
