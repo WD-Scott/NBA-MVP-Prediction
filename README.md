@@ -178,6 +178,33 @@ The chart below displays the predicted values from the best model compared to th
 </h1>
 <p align="center">
 
+Below we show whether the model correctly predicted each of the top four rankings for the five most-recent seasons:
+- 2018:
+    * 1st: ✅
+    * 2nd: ✅
+    * 3rd: ✅
+    * 4th: ✅
+- 2019:
+    * 1st: ✅
+    * 2nd: ✅
+    * 3rd:
+    * 4th:
+- 2020:
+    * 1st: ✅
+    * 2nd:
+    * 3rd:
+    * 4th: ✅
+- 2021:
+    * 1st: ✅
+    * 2nd: ✅
+    * 3rd:
+    * 4th:
+- 2022:
+    * 1st:
+    * 2nd:
+    * 3rd:
+    * 4th: ✅
+      
 ### Testing
 <a name="testing"></a>
 
