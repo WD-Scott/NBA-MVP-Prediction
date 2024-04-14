@@ -180,10 +180,10 @@ The chart below displays the predicted values from the best model compared to th
 
 Below we show whether the model correctly predicted each of the top four rankings for the five most-recent seasons:
 - 2018:
-    * 1st: ✅
-    * 2nd: ✅
-    * 3rd: ✅
-    * 4th: ✅
+    * 1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+    * 2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+    * 3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+    * 4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
 - 2019:
     * 1st: ✅
     * 2nd: ✅
