@@ -185,25 +185,25 @@ Below we show whether the model correctly predicted each of the top four ranking
     * 3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
     * 4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
 - 2019:
-    * 1st: ✅
-    * 2nd: ✅
+    * 1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+    * 2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
     * 3rd:
     * 4th:
 - 2020:
-    * 1st: ✅
+    * 1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
     * 2nd:
     * 3rd:
-    * 4th: ✅
+    * 4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
 - 2021:
-    * 1st: ✅
-    * 2nd: ✅
+    * 1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+    * 2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
     * 3rd:
     * 4th:
 - 2022:
-    * 1st:
+    * 1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
     * 2nd:
     * 3rd:
-    * 4th: ✅
+    * 4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
       
 ### Testing
 <a name="testing"></a>
