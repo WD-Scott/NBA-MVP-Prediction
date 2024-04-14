@@ -180,55 +180,10 @@ The chart below displays the predicted values from the best model compared to th
 
 Below we show whether the model correctly predicted each of the top four rankings for the five most-recent seasons:
 
-**2018**:
-
-1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-**2019**:
-
-1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-**2020**:
-
-1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-**2021**:
-
-1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-**2022**:
-
-1st: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-2nd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
-
-3rd: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/x.png)
-
-4th: ![Custom Emoji](https://github.com/WD-Scott/DS5110_Project/blob/main/images/check.png)
+<h1 align="center">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/table_ranks.png">
+</h1>
+<p align="center">
       
 ### Testing
 <a name="testing"></a>
