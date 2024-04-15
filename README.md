@@ -205,7 +205,7 @@ TBD ...
 <details>
 <summary><h1 style="font-size: 16px;">Minimal Reproducible Code</h1></summary>
 
-Each dropdown menu below contains the minimal reproducible code for reach of the Jupyter Notebooks:
+The dropdown menus below contain minimal reproducible code for reach of the Jupyter Notebooks:
 
 <details>
 <summary><h2 style="font-size: 14px;">DataCleaning_EDA</h2></summary>
