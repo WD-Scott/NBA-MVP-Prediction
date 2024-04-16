@@ -212,7 +212,7 @@ TBD ...
 The dropdown menus below contain minimal reproducible code for each of the Jupyter Notebooks:
 
 <details>
-<summary><h2 style="font-size: 14px;">DataCleaning_EDA (runtime: ~0.5 minutes)</h2></summary>
+<summary><h2 style="font-size: 14px;">[DataCleaning_EDA](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/DataCleaning_EDA.ipynb) (runtime: ~0.5 minutes)</h2></summary>
     
 ```python
 ##################################
