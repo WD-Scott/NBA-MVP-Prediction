@@ -212,7 +212,7 @@ TBD ...
 The dropdown menus below contain minimal reproducible code for each of the Jupyter Notebooks:
 
 <details>
-<summary><h2 style="font-size: 14px;">DataCleaning_EDA</h2></summary>
+<summary><h2 style="font-size: 14px;">DataCleaning_EDA (estimated runtime: ~0.5 minutes)</h2></summary>
     
 ```python
 ##################################
@@ -276,7 +276,7 @@ df_last.to_csv('df_last.csv', index=False)
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">FeatureSelection</h2></summary>
+<summary><h2 style="font-size: 14px;">FeatureSelection (estimated runtime: 6.49 minutes)</h2></summary>
 
 ```python
 ##################################
@@ -328,7 +328,7 @@ df_selected.to_csv('df_selected.csv', index=False)
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">Models</h2></summary>
+<summary><h2 style="font-size: 14px;">Models (estimated runtime: 2.30 minutes)</h2></summary>
 
 ```python
 ##################################
@@ -361,7 +361,7 @@ trained_models, results, best_model_name, best_model = train_models(df_selected,
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">Test</h2></summary>
+<summary><h2 style="font-size: 14px;">Test (estimated runtime: 0.2 minutes)</h2></summary>
 
 ```python
 ##################################
