@@ -281,7 +281,12 @@ df_last.to_csv('df_last.csv', index=False)
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">FeatureSelection (runtime: ~6.49 minutes)</h2></summary>
+<summary><h2 style="font-size: 14px;">FeatureSelection</h2></summary>
+
+<h1 align="left">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/clock2.png">
+</h1>
+<p align="left">
 
 ```python
 ##################################
@@ -333,7 +338,12 @@ df_selected.to_csv('df_selected.csv', index=False)
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">Models (runtime: ~2.30 minutes)</h2></summary>
+<summary><h2 style="font-size: 14px;">Models</h2></summary>
+
+<h1 align="left">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/clock3.png">
+</h1>
+<p align="left">
 
 ```python
 ##################################
@@ -366,7 +376,12 @@ trained_models, results, best_model_name, best_model = train_models(df_selected,
 </details>
 
 <details>
-<summary><h2 style="font-size: 14px;">Test (runtime: ~0.2 minutes)</h2></summary>
+<summary><h2 style="font-size: 14px;">Test</h2></summary>
+
+<h1 align="left">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/clock4.png">
+</h1>
+<p align="left">
 
 ```python
 ##################################
