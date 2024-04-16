@@ -174,7 +174,7 @@ We feed these ten features into the `train_models` function, which returns sever
 </h1>
 <p align="center">
 
-The chart shows that the best model is the Extra Trees Regressor (XTrees), which the `train_models` function saves to `best_model.pkl` using the `joblib` library. The Testing section below discusses our results.
+The chart shows that the best model is the Extra Trees Regressor (XTrees), which the `train_models` function saves to `best_model.pkl` using the `joblib` library.
       
 ### Testing
 <a name="testing"></a>
