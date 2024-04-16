@@ -514,6 +514,9 @@ df_results.to_csv('results.csv', index=False)
 
 This module contains various helper functions for system information retrieval, model evaluation, and visualization.
     
+<details>
+<summary><strong>Click here to see the helper functions</strong></summary>
+    
 - `get_hardware_details()`:
   
   Retrieve basic hardware details of the system.
@@ -524,11 +527,7 @@ This module contains various helper functions for system information retrieval, 
 
 - `print_dict_imps(feature_importances)`:
   
-  Print the feature importances in a visually appealing table format side-by-side for model comparison.
-
-- `print_dict_imps4x2(feature_importances)`:
-  
-  Print the feature importances in a visually appealing table format side-by-side for feature selection.
+  Print the feature importances in a visually appealing table format side-by-side.
 
 - `avg_imps(feature_importances)`:
   
@@ -553,7 +552,7 @@ This module contains various helper functions for system information retrieval, 
 - `evaluate_model(best_model, df_train, labels, df_test, features, stratify)`
 
   Evaluate the best model and generate predictions.
-  
+</details>
 </details>
 
 <details>
