@@ -119,7 +119,7 @@ In [Models.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%2
 
 In [Test.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Test.ipynb), we load in the selected features, the training dataset, the testing dataset containing the data for the 2018–22 seasons, and the best model from [Models.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Jupyter%20Notebooks/Models.ipynb). We filter the training and testing data to include only the selected features.
 
-We then perform an 80-20 train/test split of the training data and test the best model. Next, we use the best model to predict the mvp_share for the 2018–22 seasons and compare the predicted values to the actual values.
+We then call the `evaluate_model` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to retrain the best model and predict the mvp_share for the 2018–22 seasons. We then compare the predicted values to the actual values.
 
 The Results section below discuss the results from our feature selection and modeling processes, and the Testing section contains results from testing our best model and index.
 
