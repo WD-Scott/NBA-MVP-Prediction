@@ -407,7 +407,7 @@ df_test.rename(columns={'name': 'Name'}, inplace=True)
 del features[10:12]
 
 #############################################################
-###  Retrain and then test the best model on unseen data  ###
+###                  RETRAIN AND TEST                     ###
 ###    evaluate_model function from helper_functions.py   ###
 #############################################################
 (X_train, 
@@ -431,9 +431,9 @@ plot_comparison_for_season(merged_df, 2020)
 plot_comparison_for_season(merged_df, 2019)
 plot_comparison_for_season(merged_df, 2018)
 
-#####################################################################
-### Create df_results for interactive visualization in QuickSight ###
-#####################################################################
+###########################################################
+### Create df_results for interactive viz in QuickSight ###
+###########################################################
 # Load full dataset from Cleaning_EDA.ipynb
 df_results = pd.read_csv('mvp_data_edit.csv')
 
