@@ -155,16 +155,16 @@ Moving to the next-highest features in terms of importance, we get:
 
 FG% is also highly correlated with PTS, so we drop that as well. This brings in BPM, which is highly correlated with OBPM, so we drop the latter in favor of the former since it captures both OBPM and DBPM. In replacing FG%, we now look at the next candidate feature, DWS and OWS, which are correlated with WS, so we do not include those. The next option is Rk_Year, which is highly correlated with Rk_Conf and likely captures more than just conference ranking, so we include Rk_Year instead of Rk_Conf. Finally, we get AST%. So, our final set of ten features are:
 
-- MP = Minutes Played.
-- PTS = Points.
-- PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a> for the formula).
-- VORP = Value Over Replacement Player
-- WS = Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares)</a> for information about how this feature is calculated).
-- TOV = Turnovers.
-- STL% = Steal percentage.
-- BPM = Box Plus-Minus.
-- Rk_Year = Team Ranking.
-- AST% = Assist percentage.
+1. MP = Minutes Played
+2. PTS = Points
+3. PER = Player Efficiency Rating (see <a href="https://www.basketball-reference.com/about/per.html">Calculating PER</a> for the formula)
+4. VORP = Value Over Replacement Player
+5. WS = Win Shares (see <a href="https://www.basketball-reference.com/about/ws.html">NBA Win Shares)</a> for information about how this feature is calculated)
+6. TOV = Turnovers
+7. STL% = Steal percentage
+8. BPM = Box Plus-Minus
+9. Rk_Year = Team Ranking
+10. AST% = Assist percentage
 
 There are still some highly correlated features, but we proceed with these ten and save them to [df_selected.csv](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Data%20Files/df_selected.csv) to use for modeling.
 
@@ -200,7 +200,7 @@ The table below shows whether the model correctly predicted the top four ranking
 </h1>
 <p align="center">
 
-The predictions for the 2018 season were perfect in terms of ranking, but the model's rankings for the next four seasons are slightly off. The rankings for 1st and 2nd for the 2019 season are correct, but the model swaps the 3rd and 4th place candidates. For the 2020 season, the model correctly ranks the 1st and 4th place candidates but swaps 2nd and 3rd place. The model correctly ranks the 1st and 3rd place candidates for the 2021 season but places 2nd and 4th out of order. For the 2022 season, the model incorrectly ranks the 1st and 3rd place candidates but correctly ranks 2nd and 4th.
+The model accuratley predicts the MVP for each of the five seasons in the test set. The predictions for the 2018 season were perfect in terms of ranking, but the model's rankings for the next four seasons are slightly off. The rankings for 1st and 2nd for the 2019 season are correct, but the model swaps the 3rd and 4th place candidates. For the 2020 season, the model correctly ranks the 1st and 4th place candidates but swaps 2nd and 3rd place. The model correctly ranks the 1st and 2nd place candidates for the 2021 season but places 3rd and 4th out of order. For the 2022 season, the model incorrectly ranks the 2nd and 3rd place candidates but correctly ranks 1st and 4th.
       
 ### Testing
 <a name="testing"></a>
