@@ -180,7 +180,10 @@ We feed these ten features into the `train_models` function, which returns sever
 </h1>
 <p align="center">
 
-The chart shows that the best model is the Extra Trees Regressor (XTrees), and the `train_models` function saves the best model to `best_model.pkl` using the `joblib` library.
+The chart shows that the best model is the Extra Trees Regressor (XTrees), which the `train_models` function saves to `best_model.pkl` using the `joblib` library. The Testing section below discusses our results.
+      
+### Testing
+<a name="testing"></a>
 
 We import the best model into [Test.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Test.ipynb) to perform testing on the unseen data.
 
@@ -201,12 +204,6 @@ The table below shows whether the model correctly predicted the top four ranking
 <p align="center">
 
 The model accuratley predicts the MVP for each of the five seasons in the test set. The predictions for the 2018 season were perfect in terms of ranking, but the model's rankings for the next four seasons are slightly off. The rankings for 1st and 2nd for the 2019 season are correct, but the model swaps the 3rd and 4th place candidates. For the 2020 season, the model correctly ranks the 1st and 4th place candidates but swaps 2nd and 3rd place. The model correctly ranks the 1st and 2nd place candidates for the 2021 season but places 3rd and 4th out of order. For the 2022 season, the model incorrectly ranks the 2nd and 3rd place candidates but correctly ranks 1st and 4th.
-      
-### Testing
-<a name="testing"></a>
-
-TBD ...
-
 
 ### Conclusions
 <a name="conclusions"></a>
