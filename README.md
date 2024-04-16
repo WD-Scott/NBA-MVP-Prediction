@@ -382,7 +382,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 from sklearn.model_selection import train_test_split
 
 import os
-os.chdir('/sfs/qumulo/qhome/bdr6qz/Documents/MSDS/DS6050')
+os.chdir('...')
 from helper_functions import (print_importances, 
                               print_dict_imps, 
                               avg_imps, 
@@ -390,7 +390,6 @@ from helper_functions import (print_importances,
                               plot_comparison_for_season)
 
 import joblib
-# Load the best model from Models.ipynb
 best_model = joblib.load('best_model.pkl')
 
 #################
@@ -407,18 +406,15 @@ df_test = pd.read_csv('df_last.csv', usecols=features)
 df_test.rename(columns={'name': 'Name'}, inplace=True)
 del features[10:12]
 
-########################
-### Refit best model ###
-########################
-(X_train, 
- X_test, 
- y_train, 
- y_test) = train_test_split(df_train, 
-                            labels, 
-                            test_size=0.2, 
-                            shuffle=True, 
-                            random_state=28, 
-                            stratify=stratify)
+##########################
+### Retrain best model ###
+##########################
+(X_train, X_test, y_train, y_test) = train_test_split(df_train, 
+                                                      labels, 
+                                                      test_size=0.2, 
+                                                      shuffle=True, 
+                                                      random_state=28, 
+                                                      stratify=stratify)
 
 # Convert each dataset to array
 y_train = y_train.values
@@ -438,6 +434,9 @@ r2 = r2_score(y_test, y_pred)
 print("Test MSE:", mse)
 print("Test R-squared:", r2)
 
+######################################
+### Test best model on unseen data ###
+######################################
 # Create new DataFrame to compare predicted vs. actual
 dfs_n_last = []
 for season_n, df_n in df_test.groupby('Season'):
@@ -463,6 +462,9 @@ merged_df = pd.merge(df_pred, df_full[['name', 'Season', 'mvp_share']],
 merged_df.rename(columns={'mvp_share': 'actual'}, inplace=True)
 merged_df['actual'] *= 100
 
+#########################
+### Visualize results ###
+#########################
 # Call function to plot predicted vs. actual
 plot_comparison_for_season(merged_df, 2022)
 plot_comparison_for_season(merged_df, 2021)
@@ -470,7 +472,9 @@ plot_comparison_for_season(merged_df, 2020)
 plot_comparison_for_season(merged_df, 2019)
 plot_comparison_for_season(merged_df, 2018)
 
-# Create df_results for interactive visualization in QuickSight
+#####################################################################
+### Create df_results for interactive visualization in QuickSight ###
+#####################################################################
 # Load full dataset from Cleaning_EDA.ipynb
 df_results = pd.read_csv('mvp_data_edit.csv')
 
