@@ -213,7 +213,11 @@ The dropdown menus below contain minimal reproducible code for each of the Jupyt
 
 <details>
 <summary><h2 style="font-size: 14px;">DataCleaning_EDA</h2></summary>
-runtime: ~0.5 minutes
+
+<h1 align="left">
+    <img src="https://github.com/WD-Scott/DS5110_Project/blob/main/images/clock1.png">
+</h1>
+<p align="left">
     
 ```python
 ##################################
