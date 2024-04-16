@@ -406,61 +406,20 @@ df_test = pd.read_csv('df_last.csv', usecols=features)
 df_test.rename(columns={'name': 'Name'}, inplace=True)
 del features[10:12]
 
-##########################
-### Retrain best model ###
-##########################
-(X_train, X_test, y_train, y_test) = train_test_split(df_train, 
-                                                      labels, 
-                                                      test_size=0.2, 
-                                                      shuffle=True, 
-                                                      random_state=28, 
-                                                      stratify=stratify)
-
-# Convert each dataset to array
-y_train = y_train.values
-y_test = y_test.values
-X_train = X_train.values
-X_test = X_test.values
-
-# Fit best model
-best_model.fit(X_train, y_train)
-
-# Make predictions on test data using best model
-y_pred = best_model.predict(X_test)
-
-# Evaluate the best model
-mse = mean_squared_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-print("Test MSE:", mse)
-print("Test R-squared:", r2)
-
-######################################
-### Test best model on unseen data ###
-######################################
-# Create new DataFrame to compare predicted vs. actual
-dfs_n_last = []
-for season_n, df_n in df_test.groupby('Season'):
-    feature_n = df_n.drop(['Season', 'Name'], axis=1).values
-    prediction = best_model.predict(feature_n)
-    df_curr = pd.DataFrame(data=feature_n, columns=features)
-    df_curr['Season'] = season_n
-    df_curr['name'] = df_n['Name'].values
-    df_curr['predicted'] = prediction * 100
-    df_curr = df_curr.sort_values(by='predicted', ascending=False).reset_index(drop=True)
-    dfs_n_last.append(df_curr)
-df_pred = pd.concat(dfs_n_last, ignore_index=True)
-
-# Merge df_pred with full dataset
-keep = list(df_pred.columns)
-del keep[12]
-keep.append('mvp_share')
-df_full = pd.read_csv('mvp_data_edit.csv', usecols=keep)
-# Merge df_pred with df_full on "name" and "Season" columns
-merged_df = pd.merge(df_pred, df_full[['name', 'Season', 'mvp_share']], 
-                     on=['name', 'Season'], how='left')
-# Rename the 'mvp_share' column to 'actual' in the merged dataframe
-merged_df.rename(columns={'mvp_share': 'actual'}, inplace=True)
-merged_df['actual'] *= 100
+#############################################################
+###  Retrain and then test the best model on unseen data  ###
+###    evaluate_model function from helper_functions.py   ###
+#############################################################
+(X_train, 
+ X_test, 
+ y_train, 
+ y_test, 
+ merged_df) = evaluate_model(best_model, 
+                             df_train, 
+                             labels, 
+                             df_test, 
+                             features,
+                             stratify)
 
 #########################
 ### Visualize results ###
@@ -599,6 +558,9 @@ This module contains various helper functions for system information retrieval, 
 - `plot_comparison_for_season(df, season)`
 
   Plot the actual vs. predicted mvp_share values.
+
+- `evaluate_model(best_model, df_train, labels, df_test, features, stratify)`
+  Evaluate the best model and generate predictions.
   
 </details>
 
