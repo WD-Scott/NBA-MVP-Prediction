@@ -25,7 +25,6 @@ Click on the Report dropdown menu below to read more about the data, experimenta
       * [Design Overview](#design-overview)
       * [Feature Selection Process](#feature-selection-process)
       * [Modeling](#modeling)
-      * [Index Building](#index-building)
    * [Results](#results)
    * [Testing](#testing)
    * [Conclusions](#conclusions)
@@ -122,11 +121,6 @@ In [Test.ipynb](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207
 We then call the `evaluate_model` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to retrain the best model and predict the mvp_share for the 2018–22 seasons. We then compare the predicted values to the actual values.
 
 The Results section below discuss the results from our feature selection and modeling processes, and the Testing section contains results from testing our best model and index.
-
-#### Index Building
-<a name="index-building"></a>
-
-TBD...
 
 ### Results
 <a name="results"></a>
