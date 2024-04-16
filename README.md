@@ -110,7 +110,7 @@ We set the `n_jobs` parameter to $-1$ in the [BayesSearchCV](https://scikit-opti
 
 After running the `preprocess_and_train` function, we use the `print_dict_imps` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to print tables of the feature importances for each method, which the `preprocess_and_train` function stores in a Python dictionary. We then use the `avg_imp` function from [helper_functions.py](https://github.com/UVA-MLSys/Big-Data-Systems/blob/main/Team%207/Python%20Modules/helper_functions.py) to display the average feature importance across the eight methods. 
 
-Refer to the Results section below to see the results of the feature selection process.
+Please refer to the Results section below to see the results of the feature selection process.
 
 #### Modeling
 <a name="modeling"></a>
@@ -180,7 +180,7 @@ We feed these ten features into the `train_models` function, which returns sever
 </h1>
 <p align="center">
 
-The chart shows clearly that the best model is the Extra Trees Regressor (XTrees), and the `train_models` function saves the best model to `best_model.pkl` using the `joblib` library.
+The chart shows that the best model is the Extra Trees Regressor (XTrees), and the `train_models` function saves the best model to `best_model.pkl` using the `joblib` library.
 
 We import the best model into [Test.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Test.ipynb) to perform testing on the unseen data.
 
