@@ -13,6 +13,11 @@ Data Scientists and analysts have developed several metrics for determining a pl
 
 Click on the Report dropdown menu below to learn about the data, experimental design, results, testing, and conclusions.
 
+<div align="center">
+    <img src="images/goals.png">
+</div>
+<p align="center">
+
 <details>
 <summary><h1 style="font-size: 22px;">Report</h1></summary>
 
