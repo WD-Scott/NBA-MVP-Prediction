@@ -570,5 +570,10 @@ The README.md file includes the repository description and the report.
 - #### [requirements.txt](https://github.com/WD-Scott/DS5110_Project/blob/main/requirements.txt):
 
 This file includes all of the necessary libraries and versions for running our code.
+
+- #### [best_model.pkl](https://github.com/WD-Scott/DS5110_Project/blob/main/best_model.pkl):
+
+This file contains the best model from [Models.ipynb](https://github.com/WD-Scott/DS5110_Project/blob/main/Jupyter%20Notebooks/Models.ipynb).
+
 </details>
 </details>
